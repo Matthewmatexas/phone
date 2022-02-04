@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>MTQ</title>
+</head>
+<body id="body">
+    <style>
+        html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*START*/
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+        #body{
+            background-color: black;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            transition: 0.3s;
+        }
+        @keyframes sukasi{
+            0%{
+                transform: rotate(-360deg);
+            }
+            100%{
+
+            }
+        }
+    </style>
+    <div style="width: 100%; height: 100%; background-color: white; position: fixed; display: none; justify-content: center; align-items: center; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 5;" id="wifi"><i class="fas fa-caret-left" style="position: absolute; top: 5px; left: 10px; font-size: 55px;" onclick="wifi2()" id="back1"></i><div style="width: 37px; height: 37px; border-radius: 100%; background-color: black; display: none; border: 37px solid black; border-top-color: white; border-bottom-color: white; border-left-color: white; justify-content: center; align-items: center; transition: 0.3s; animation-name: sukasi; animation-duration: 1s; animation-iteration-count: infinite; animation-timing-function: linear;" id="border2"></div><i class="fas fa-wifi" style="font-size: 75px;" id="network"></i><h1 style="font-size: 20px; padding: 10px; margin-top: 15px;">Choose your Wi-Fi network</h1><div style="width: 90%; height: 50px; border-radius: 10px 10px 0 0; background-color: lightgray; display: flex; justify-content: space-between; align-items: center;" onclick="connect()"><h1 style="margin-left: 15px;">Bite Home Wi-Fi</h1><i class="fas fa-wifi" style="margin-right: 15px;"></i></div><div style="width: 90%; height: 50px; border-radius: 0 0 10px 10px; background-color: lightgray; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid white;" onclick="connect()"><h1 style="margin-left: 15px;">Bite Work Wi-Fi</h1><i class="fas fa-wifi" style="margin-right: 15px;"></i></div><div style="width: 90%; height: 50px; border-radius: 10px; background-color: lightgray; display: flex; justify-content: space-between; align-items: center; margin-top: 15px;" onclick="connect()"><h1 style="margin-left: 15px;">Use Mobile data</h1><i class="fas fa-satellite-dish" style="margin-right: 15px;"></i></div></div>
+    <button id="power" onclick="powerOn()" style="width: 10px; height: 100px; border: 2px solid darkgray; outline: none; background-color: lightgray; opacity: 0.9; font-size: 50px; border-radius: 10px 0 0 10px; font-family: 'Poppins', sans-serif; position: absolute; right: 0; top: 150px; overflow: hidden; transition: 0.3s;"><i class="fas fa-power-off" id="powerIndicator" style="color: lightgray; transition: 0.3s;"></i></button>
+    <div style="display: none; justify-content: center; align-items: center; width: 100%; height: 100%;" id="mtq"><div style="width: 200px; height: 70px; border-radius: 100%; border: 2px solid white; border-bottom-color: transparent; display: flex; justify-content: center; align-items: center; transition: 0.3s;" id="border"><h1 style="color: white; font-size: 40px;"><span id="m">M</span><span id="t">T</span><span id="q">Q</span></h1></div></div>
+    <div style="display: none; justify-content: center; align-items: center; width: 100%; height: 100px; position: absolute; bottom: 50px; transition: 0.3s;" id="q1"><div style="width: 70px; height: 70px; border-radius: 100%; border: 2px solid white; display: flex; justify-content: center; align-items: center; transition: 0.3s;"><h1 style="color: white; font-size: 40px;">Q1</h1></div></div>
+    <div style="display: none; justify-content: center; align-items: center; width: 100%; height: 100%;" id="welcome"><h1 style="font-size: 40px;"><span id="w1" style="color: white; transition: 0.3s;">W</span><span id="e1" style="color: white; transition: 0.3s;">e</span><span id="l1" style="color: white; transition: 0.3s;">l</span><span id="c1" style="color: white; transition: 0.3s;">c</span><span id="o1" style="color: white; transition: 0.3s;">o</span><span id="m1" style="color: white; transition: 0.3s;">m</span><span id="ee1" style="color: white; transition: 0.3s;">e</span><span id="mark1" style="color: white; transition: 0.3s;">!</span></h1></div>
+    <div style="display: none; justify-content: center; align-items: center; width: 100%; height: 100px; position: absolute; bottom: 50px; transition: 0.3s;" id="next"><i class="fas fa-chevron-circle-right" style="font-size: 65px; border: 5px solid black; border-radius: 100%; color: white; background-color: black; transition: 0.3s; opacity: 0;" id="arrow" onclick="wifi()"></i></div>
+    <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
+    <script>
+        function powerOn() {
+            document.getElementById("power").style.width = "100px";
+            document.getElementById("powerIndicator").style.color = "white";
+            setTimeout(() => {
+                document.getElementById("power").style.width = "0";
+            }, 5000);
+            setTimeout(() => {
+                document.getElementById("power").style.display = "none";
+            }, 5300);
+            setTimeout(() => {
+                document.getElementById("mtq").style.display = "flex";
+            }, 8000);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "black";
+            }, 16000);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 16100);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 16200);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 16300);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 16400);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 16500);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 16600);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 16700);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 16800);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 16900);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 17000);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 17100);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 17200);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 17300);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 17400);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 17500);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 17600);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 17700);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 17800);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 17900);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 18000);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 18100);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 18200);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 18300);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 18400);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 18500);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 18600);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 18700);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 18800);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 18900);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 19000);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 19100);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 19200);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 19300);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 19400);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 19500);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 19600);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 19700);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 19800);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 19900);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 20000);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 20100);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 20200);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 20300);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 20400);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 20500);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 20600);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 20700);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 20800);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 20900);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 21000);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 21100);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 21200);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 21300);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 21400);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 21500);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 21600);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 21700);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 21800);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 21900);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 22000);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 22100);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 22200);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 22300);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 22400);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 22500);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+                document.getElementById("m").style.color = "black";
+            }, 22600);
+            setTimeout(() => {
+                document.getElementById("m").style.color = "white";
+                document.getElementById("t").style.color = "black";
+            }, 22700);
+            setTimeout(() => {
+                document.getElementById("t").style.color = "white";
+                document.getElementById("q").style.color = "black";
+            }, 22800);
+            setTimeout(() => {
+                document.getElementById("q").style.color = "white";
+            }, 22900);
+            setTimeout(() => {
+                document.getElementById("border").style.marginTop = "-150%";
+            }, 25000);
+            setTimeout(() => {
+                document.getElementById("q1").style.display = "flex";
+            }, 26000);
+            setTimeout(() => {
+                document.getElementById("q1").style.display = "none";
+                document.getElementById("mtq").style.display = "none";
+                document.getElementById("body").style.backgroundColor = "white";
+            }, 30000);
+            setTimeout(() => {
+                document.getElementById("welcome").style.display = "flex";
+            }, 31000);
+            setTimeout(() => {
+                document.getElementById("w1").style.color = "black";
+            }, 32000);
+            setTimeout(() => {
+                document.getElementById("e1").style.color = "black";
+            }, 32300);
+            setTimeout(() => {
+                document.getElementById("l1").style.color = "black";
+            }, 32600);
+            setTimeout(() => {
+                document.getElementById("c1").style.color = "black";
+            }, 32900);
+            setTimeout(() => {
+                document.getElementById("o1").style.color = "black";
+            }, 33200);
+            setTimeout(() => {
+                document.getElementById("m1").style.color = "black";
+            }, 33500);
+            setTimeout(() => {
+                document.getElementById("ee1").style.color = "black";
+            }, 33800);
+            setTimeout(() => {
+                document.getElementById("mark1").style.color = "black";
+            }, 34100);
+            setTimeout(() => {
+                document.getElementById("next").style.display = "flex";
+            }, 35000);
+            setTimeout(() => {
+                document.getElementById("arrow").style.opacity = "1";
+            }, 37000);
+        }
+        function wifi() {
+            document.getElementById("wifi").style.display = "flex";
+            setTimeout(() => {
+                document.getElementById("wifi").style.opacity = "1";
+            }, 100);
+        }
+        function wifi2() {
+            document.getElementById("wifi").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("wifi").style.display = "none";
+            }, 300);
+        }
+        function connect() {
+            document.getElementById("network").style.display = "none";
+            document.getElementById("back1").style.display = "none";
+            document.getElementById("border2").style.display = "flex";
+        }
+    </script>
+</body>
+</html>
