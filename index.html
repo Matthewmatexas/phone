@@ -90,8 +90,8 @@ table {
   content: '';  
   box-sizing: border-box;
   position: absolute;
-  left: 1px;
-  top: 1px;
+  left: 2px;
+  top: 2px;
   border: 2px solid purple;
   width: 12px;
   height: 12px;
@@ -143,10 +143,10 @@ table {
     
 @keyframes rotation {
   0% {
-    transform: rotate(42.5deg);
+    transform: rotate(0eg);
   }
   100% {
-    transform: rotate(402.5deg);
+    transform: rotate(360deg);
   }
 } 
     </style>
@@ -162,6 +162,9 @@ table {
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="gestures"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-mobile"></i> Gestures</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">Gestures are used for navigation.</p><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; transition: 0.3s;" id="gesture" onclick="gestures1()"><p><i class="fa-solid fa-icons"></i> View tutorial of gestures</p></div></div>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center; z-index: 2; background-color: white;" id="gestures2"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-mobile"></i> Gestures</h1><h1 style="font-size: 20px; margin-bottom: 50px; color: purple;">Click the button at the bottom of the screen to return to homescreen.</h1><h1 style="color: purple;"><i class="fa-solid fa-arrow-down"></i></h1><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;" id="bottomBtn" onclick="home()"></div></div>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 0; transition: 0.3s;" id="great">Great! You now know how to navigate home.</p><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="mode"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-chart-pie"></i> Mode</h1><div style="width: 40%; height: 40%; border-radius: 15px; background-color: white; border: 2px solid darkgrey; transition: 0.3s;" id="light" onclick="lightMode()"></div><p style="position: absolute; font-size: 15px; left: 23%; bottom: 26%;">Light</p><div style="width: 40%; height: 40%; border-radius: 15px; background-color: black; margin-left: 20px; transition: 0.3s;" id="dark" onclick="darkMode()"></div><p style="position: absolute; font-size: 15px; right: 23%; bottom: 26%;">Dark</p><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">Select a mode your prefer.</p><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: none; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; transition: 0.3s; position: fixed; bottom: 130px; opacity: 0;" id="modeConfirm" onclick="modeOk()"><p><i class="fa-solid fa-circle-check"></i> Confirm</p></div><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: none; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; transition: 0.3s; position: fixed; bottom: 130px; opacity: 0;" id="modeConfirm2" onclick="modeOk2()"><p><i class="fa-solid fa-circle-check"></i> Confirm</p></div></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 50px; transition: 0.3s; opacity: 0; z-index: 2;" id="complete"><h1><i class="fa-solid fa-circle-check"></i> Complete!</h1><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;" id="setupOk" onclick="setupHome()"></div><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 1; transition: 0.3s;">Click the button to return home <i class="fa-solid fa-arrow-down"></i></p></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home2"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; z-index: 3;" id="menu" onclick="menuOpen()"></i><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; display: none; z-index: 3;" id="menu2" onclick="menuClose()"></i><div style="width: 0; height: 0; overflow: hidden; position: absolute; top: 80px; background-color: white; opacity: 0; transition: 0.3s; right: 20px; border-radius: 15px; border: none; box-shadow: 0 0 15px purple; display: flex; justify-content: center; align-items: center; flex-direction: column; color: purple;" id="menuWindow"><p style="font-size: 20px; width: 100%; height: 55px; transition: 0.3s; display: flex; justify-content: left; padding-left: 10px; align-items: center; border-bottom-color: 1px solid purple;" onclick="modeChang()" id="modeSet"><i class="fa-solid fa-chart-pie" style="margin-right: 5px;"></i> Mode settings</p><p style="font-size: 20px; width: 100%; height: 55px; transition: 0.3s; display: flex; justify-content: left; padding-left: 10px; align-items: center; border-top: 1px solid purple;"><i class="fa-solid fa-globe" style="margin-right: 5px;"></i> Region settings</p></div></div>
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
         function power() {
@@ -643,6 +646,229 @@ table {
             setTimeout(() => {
                 document.getElementById("great").style.opacity = "1";
             }, 2500);
+            setTimeout(() => {
+                document.getElementById("home").style.opacity = "0";
+            }, 5200);
+            setTimeout(() => {
+                document.getElementById("home").style.display = "none";
+            }, 5500);
+            setTimeout(() => {
+                document.getElementById("mode").style.display = "flex";
+            }, 5500);
+            setTimeout(() => {
+                document.getElementById("mode").style.opacity = "1";
+            }, 5550);
+        }
+        function lightMode() {
+            document.getElementById("light").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("light").style.backgroundColor = "white";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("light").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("light").style.backgroundColor = "white";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("body").style.backgroundColor = "white";
+                document.getElementById("mode").style.color = "black";
+                document.getElementById("mode").style.backgroundColor = "white";
+                document.getElementById("complete").style.color = "black";
+                document.getElementById("complete").style.backgroundColor = "white";
+                document.getElementById("menuWindow").style.backgroundColor = "white";
+                document.getElementById("home2").style.color = "black";
+                document.getElementById("light").style.border = "2px solid purple";
+                document.getElementById("dark").style.border = "none";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("modeConfirm").style.display = "flex";
+            }, 2500);
+            setTimeout(() => {
+                document.getElementById("modeConfirm").style.opacity = "1";
+            }, 2550);
+        }
+        function darkMode() {
+            document.getElementById("dark").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("dark").style.backgroundColor = "black";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("dark").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("dark").style.backgroundColor = "black";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("body").style.backgroundColor = "black";
+                document.getElementById("mode").style.color = "white";
+                document.getElementById("mode").style.backgroundColor = "black";
+                document.getElementById("complete").style.color = "white";
+                document.getElementById("complete").style.backgroundColor = "black";
+                document.getElementById("menuWindow").style.backgroundColor = "black";
+                document.getElementById("home2").style.color = "white";
+                document.getElementById("dark").style.border = "2px solid purple";
+                document.getElementById("light").style.border = "none";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("modeConfirm").style.display = "flex";
+            }, 2500);
+            setTimeout(() => {
+                document.getElementById("modeConfirm").style.opacity = "1";
+            }, 2550);
+        }
+        function modeOk() {
+            document.getElementById("modeConfirm").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("modeConfirm").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("modeConfirm").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("modeConfirm").style.backgroundColor = "transparent";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("mode").style.opacity = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("mode").style.display = "none";
+            }, 1800);
+            setTimeout(() => {
+                document.getElementById("complete").style.display = "flex";
+            }, 1800);
+            setTimeout(() => {
+                document.getElementById("complete").style.opacity = "1";
+            }, 1850);
+        }
+        function setupHome() {
+            document.getElementById("home2").style.display = "flex";
+            document.getElementById("home2").style.opacity = "1";
+            document.getElementById("setupOk").style.backgroundColor = "transparent";
+            setTimeout(() => {
+                document.getElementById("setupOk").style.backgroundColor = "purple";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("setupOk").style.backgroundColor = "transparent";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("setupOk").style.backgroundColor = "purple";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("complete").style.height = "100px";
+                document.getElementById("complete").style.borderRadius = "0 0 15px 15px";
+                document.getElementById("complete").style.opacity = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("complete").style.display = "none";
+                document.getElementById("gestures2").style.display = "none";
+            }, 1800);
+        }
+        function menuOpen() {
+            document.getElementById("menu").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("menu").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("menu").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("menu").style.backgroundColor = "transparent";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("menu").style.display = "none";
+                document.getElementById("menu2").style.display = "flex";
+            }, 1200);
+            setTimeout(() => {
+                document.getElementById("menuWindow").style.width = "210px";
+                document.getElementById("menuWindow").style.height = "110px";
+                document.getElementById("menuWindow").style.border = "2px solid purple";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("menuWindow").style.opacity = "1";
+            }, 1650);
+        }
+        function menuClose() {
+            document.getElementById("menu2").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("menu2").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("menu2").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("menu2").style.backgroundColor = "transparent";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("menu").style.display = "flex";
+            }, 1200);
+            setTimeout(() => {
+                document.getElementById("menuWindow").style.opacity = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("menuWindow").style.width = "0";
+                document.getElementById("menuWindow").style.height = "0";
+                document.getElementById("menuWindow").style.border = "none";
+            }, 1600);
+        }
+        function modeChang() {
+            document.getElementById("modeSet").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("modeSet").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("modeSet").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("modeSet").style.backgroundColor = "transparent";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("home2").style.opacity = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("home2").style.display = "none";
+            }, 1800);
+            setTimeout(() => {
+                document.getElementById("mode").style.display = "flex"
+                document.getElementById("modeConfirm2").style.display = "flex";
+                document.getElementById("modeConfirm2").style.opacity = "1";
+            }, 1800);
+            setTimeout(() => {
+                document.getElementById("mode").style.opacity = "1";
+            }, 1850);
+            setTimeout(() => {
+                document.getElementById("menuWindow").style.opacity = "0";
+                document.getElementById("menuWindow").style.width = "0";
+                document.getElementById("menuWindow").style.height = "0";
+                document.getElementById("menuWindow").style.border = "none";
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("menu").style.display = "flex";
+            }, 2000);
+        }
+        function modeOk2() {
+            document.getElementById("modeConfirm2").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("modeConfirm2").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("modeConfirm2").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("modeConfirm2").style.backgroundColor = "transparent";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("mode").style.opacity = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("mode").style.display = "none";
+            }, 1800);
+            setTimeout(() => {
+                document.getElementById("home2").style.display = "flex";
+            }, 1800);
+            setTimeout(() => {
+                document.getElementById("home2").style.opacity = "1";
+            }, 1850);
         }
     </script>
 </body>
