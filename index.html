@@ -62,6 +62,7 @@ table {
 *{
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -79,9 +80,9 @@ table {
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  border: 2px solid white;
+  border: 2px solid purple;
   box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  animation: rotation 1s ease-in-out infinite;
   position: absolute;
   left: 12.5px;
 }
@@ -91,7 +92,7 @@ table {
   position: absolute;
   left: 1px;
   top: 1px;
-  border: 2px solid white;
+  border: 2px solid purple;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -104,7 +105,7 @@ table {
   position: relative;
   border: 6px solid purple;
   box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  animation: rotation 1s ease-in-out infinite;
 }
 .loader2::after {
   content: '';  
@@ -113,6 +114,28 @@ table {
   left: 5px;
   top: 5px;
   border: 6px solid purple;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+.loader3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 6px solid white;
+  box-sizing: border-box;
+  animation: rotation 1s ease-in-out infinite;
+  position: fixed;
+}
+.loader3::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  border: 6px solid white;
   width: 37px;
   height: 37px;
   border-radius: 50%;
@@ -127,18 +150,20 @@ table {
   }
 } 
     </style>
-    <button style="width: 100px; height: 100px; color: purple; background-color: white; z-index: 5; font-size: 50px; border: 2px solid purple; border-radius: 15px 0 0 15px; position: fixed; top: 200px; right: -85px; transition: 0.3s;" onclick="power()" id="powerBtn"><i class="fa-solid fa-power-off"></i></button>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: white; font-size: 30px; transition: 0.3s; opacity: 0;" id="restarting"><h1 style="margin-top: -200px;">Restarting...</h1><span class="loader3"></span></div>
+    <button style="width: 100px; height: 100px; color: purple; background-color: black; z-index: 5; font-size: 50px; border: 2px solid purple; border-radius: 15px 0 0 15px; position: fixed; top: 200px; right: -85px; transition: 0.3s;" onclick="power()" id="powerBtn"><i class="fa-solid fa-power-off"></i></button>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; color: white; font-size: 50px; transition: 0.3s; opacity: 0;" id="on"><h1>Motaq</h1><h1 style="font-size: 15px; position: fixed; opacity: 0; transition: 0.3s; bottom: 30px; color: darkgrey;" id="poweredBy">Powered by TONA <i class="fa-brands fa-superpowers"></i></h1><div style="width: 100%; height: 100px; position: fixed; margin-top: -200px; z-index: 5; background-color: black; transition: 0.3s;" id="animation"></div></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; color: black; font-size: 50px; transition: 0.3s; opacity: 0;" id="hello"><h1>Hello!</h1><div style="width: 100%; height: 100px; position: fixed; z-index: 5; background-color: white; transition: 4s ease-in-out;" id="animation2"></div><h1 style="transition: 0.3s; position: fixed; bottom: 100px; opacity: 0; color: purple; display: flex; justify-content: center; align-items: center; width: 100px; height: 100px; border-radius: 100%;" onclick="next()" id="continue"><i class="fa-solid fa-angles-right"></i></h1></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; flex-direction: column;" id="network"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-wifi"></i> Select network:</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed;">Network connection is required for setup, to enable features such as accurate date and time, etc.</p><div style="font-size: 20px; width: 90%; height: 50px; background-color: purple; color: white; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 200px; transition: 0.3s;" id="wifiSearch"><p style="padding-left: 35px;"> Searching for Wi-Fi...</p><span class="loader" id="loader"></div><div style="font-size: 20px; width: 90%; height: 50px; opacity: 0; background-color: purple; color: white; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 200px; transition: 0.3s;" id="wifiFound"><p><i class="fa-solid fa-wifi"></i> No Wi-Fi networks found.</p></div><div style="font-size: 20px; width: 90%; height: 50px; background-color: purple; color: white; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 270px; transition: 0.3s;" onclick="next2()" id="mobileData"><p><i class="fa-solid fa-arrow-right-arrow-left" style="transform: rotate(-45deg);"></i> Use Mobile data</p></div></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="setUp"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-gears"></i> Setting up...</h1><span class="loader2" id="loader2"></span><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed;">This may take a few minutes.</p></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; color: black; font-size: 50px; transition: 0.3s; opacity: 0;" id="hello"><h1>Hello!</h1><div style="width: 100%; height: 100px; position: fixed; z-index: 5; background-color: white; transition: 0.3s;" id="animation2"></div><h1 style="transition: 0.3s; position: fixed; bottom: 100px; opacity: 0; color: purple; display: flex; justify-content: center; align-items: center; width: 100px; height: 100px; border-radius: 100%;" onclick="next()" id="continue"><i class="fa-solid fa-angles-right"></i></h1></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; flex-direction: column;" id="network"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-wifi"></i> Select network:</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">Network connection is required for setup, to enable features such as accurate date and time, etc.</p><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 200px; transition: 0.3s;" id="wifiSearch"><p style="padding-left: 35px;"> Searching for Wi-Fi...</p><span class="loader" id="loader"></div><div style="font-size: 20px; width: 90%; height: 50px; opacity: 0; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 200px; transition: 0.3s;" id="wifiFound"><p><i class="fa-solid fa-wifi"></i> No Wi-Fi networks found.</p></div><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 270px; transition: 0.3s;" onclick="next2()" id="mobileData"><p><i class="fa-solid fa-arrow-right-arrow-left" style="transform: rotate(-45deg);"></i> Use Mobile data</p></div></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="setUp"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-gears"></i> Setting up...</h1><span class="loader2" id="loader2"></span><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">This may take a few minutes to complete.</p></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center; border: 2px solid white;" id="region"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-globe"></i> Select region:</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">Region is required for setup, to accurately use features such as Maps, etc.</p><div style="width: 300px; height: 320px; border: 2px solid purple; transition: 0.3s; box-shadow: 0 0 15px purple; position: fixed; background-color: white; z-index: 5; border-radius: 15px; opacity: 0; display: none;" id="restart"><p style="color: purple; font-size: 25px; margin-top: 20px;"><i class="fa-solid fa-power-off"></i> Restart required</p><p style="font-size: 18px; color: darkgrey; text-align: justify; padding: 20px;">Restart is required to change region. If the device doesn't correctly set up your region again, please check troubleshooting guide.</p><button style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; background-color: white; transition: 0.3s; margin-left: 5%;" onclick="restartConfirm()" id="resBtn"><i class="fa-solid fa-arrows-rotate" style="margin-right: 5px;"></i> Restart</button><button style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; margin-top: 20px; align-items: center; border-radius: 15px; background-color: white; transition: 0.3s; margin-left: 5%;" id="cancel" onclick="cancelRegion()"><i class="fa-solid fa-xmark" style="margin-right: 5px;"></i> Cancel</button></div><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 200px; transition: 0.3s;" id="lithuania"><p><i class="fa-solid fa-earth-europe"></i> Lithuania</p><div style="font-size: 20px; width: 90%; left: 5%; height: 50px; color: purple; display: flex; justify-content: center; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 270px; transition: 0.3s;" id="other" onclick="changeRegion()"><p> That's not my region</p></div></div>
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
         function power() {
             document.getElementById("powerBtn").style.pointerEvents = "none";
             document.getElementById("powerBtn").style.backgroundColor = "purple";
             setTimeout(() => {
-                document.getElementById("powerBtn").style.backgroundColor = "white";
+                document.getElementById("powerBtn").style.backgroundColor = "black";
             }, 300);
             setTimeout(() => {
                 document.getElementById("powerBtn").style.right = "0";
@@ -147,13 +172,13 @@ table {
                 document.getElementById("powerBtn").style.backgroundColor = "purple";
             }, 1000);
             setTimeout(() => {
-                document.getElementById("powerBtn").style.backgroundColor = "white";
+                document.getElementById("powerBtn").style.backgroundColor = "black";
             }, 1300);
             setTimeout(() => {
                 document.getElementById("powerBtn").style.backgroundColor = "purple";
             }, 1600);
             setTimeout(() => {
-                document.getElementById("powerBtn").style.backgroundColor = "white";
+                document.getElementById("powerBtn").style.backgroundColor = "black";
             }, 1900);
             setTimeout(() => {
                 document.getElementById("powerBtn").style.right = "-100px";
@@ -189,8 +214,14 @@ table {
                 document.getElementById("hello").style.opacity = "1";
             }, 24500);
             setTimeout(() => {
-                document.getElementById("animation2").style.marginRight = "-300%";
+                document.getElementById("animation2").style.marginTop = "-70px";
             }, 25000);
+            setTimeout(() => {
+                document.getElementById("animation2").style.marginTop = "-100px";
+            }, 26000);
+            setTimeout(() => {
+                document.getElementById("animation2").style.marginTop = "-200px";
+            }, 27000);
             setTimeout(() => {
                 document.getElementById("animation2").style.display = "none";
             }, 29000);
@@ -223,24 +254,24 @@ table {
             }, 1850);
             setTimeout(() => {
                 document.getElementById("wifiSearch").style.opacity = "0";
-            }, 10700);
+            }, 19700);
             setTimeout(() => {
                 document.getElementById("wifiSearch").style.display = "none";
-            }, 11000);
+            }, 20000);
             setTimeout(() => {
                 document.getElementById("wifiFound").style.opacity = "0.5";
-            }, 11000);
+            }, 20000);
         }
         function next2() {
-            document.getElementById("mobileData").style.opacity = "0";
+            document.getElementById("mobileData").style.backgroundColor = "purple";
             setTimeout(() => {
-                document.getElementById("mobileData").style.opacity = "1";
+                document.getElementById("mobileData").style.backgroundColor = "white";
             }, 300);
             setTimeout(() => {
-                document.getElementById("mobileData").style.opacity = "0";
+                document.getElementById("mobileData").style.backgroundColor = "purple";
             }, 600);
             setTimeout(() => {
-                document.getElementById("mobileData").style.opacity = "1";
+                document.getElementById("mobileData").style.backgroundColor = "white";
             }, 900);
             setTimeout(() => {
                 document.getElementById("network").style.opacity = "0";
@@ -254,6 +285,177 @@ table {
             setTimeout(() => {
                 document.getElementById("setUp").style.opacity = "1";
             }, 1850);
+            setTimeout(() => {
+                document.getElementById("setUp").style.opacity = "0";
+            }, 21700);
+            setTimeout(() => {
+                document.getElementById("setUp").style.display = "none";
+            }, 22000);
+            setTimeout(() => {
+                document.getElementById("region").style.display = "flex";
+            }, 22000);
+            setTimeout(() => {
+                document.getElementById("region").style.opacity = "1";
+            }, 22050);
+        }
+        function changeRegion() {
+            document.getElementById("other").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("other").style.backgroundColor = "white";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("other").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("other").style.backgroundColor = "white";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("restart").style.display = "block";
+            }, 1450);
+            setTimeout(() => {
+                document.getElementById("restart").style.opacity = "1";
+            }, 1500);
+        }
+        function cancelRegion() {
+            document.getElementById("cancel").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("cancel").style.backgroundColor = "white";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("cancel").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("cancel").style.backgroundColor = "white";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("restart").style.opacity = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("restart").style.display = "none";
+            }, 1800);
+        }
+        function restartConfirm() {
+            document.getElementById("resBtn").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("resBtn").style.backgroundColor = "white";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("resBtn").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("resBtn").style.backgroundColor = "white";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("restart").style.opacity = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("restart").style.display = "none";
+            }, 1800);
+            setTimeout(() => {
+                document.getElementById("region").style.opacity = "0";
+            }, 2200);
+            setTimeout(() => {
+                document.getElementById("region").style.display = "none";
+            }, 2500);
+            setTimeout(() => {
+                document.getElementById("body").style.backgroundColor = "black";
+            }, 4000);
+            setTimeout(() => {
+                document.getElementById("restarting").style.display = "flex";
+            }, 4650);
+            setTimeout(() => {
+                document.getElementById("restarting").style.opacity = "1";
+            }, 4700);
+            setTimeout(() => {
+                document.getElementById("animation").style.marginTop = "-200px";
+            }, 5000);
+            setTimeout(() => {
+                document.getElementById("restarting").style.opacity = "0";
+            }, 14700);
+            setTimeout(() => {
+                document.getElementById("restarting").style.display = "none";
+            }, 15000);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.display = "block";
+            }, 14950);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.right = "-85px";
+            }, 15000);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.backgroundColor = "purple";
+            }, 16000);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.backgroundColor = "black";
+            }, 16300);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.right = "0";
+            }, 16500);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.backgroundColor = "purple";
+            }, 17000);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.backgroundColor = "black";
+            }, 17300);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.backgroundColor = "purple";
+            }, 17600);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.backgroundColor = "black";
+            }, 17900);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.right = "-100px";
+            }, 18500);
+            setTimeout(() => {
+                document.getElementById("powerBtn").style.display = "none";
+            }, 18800);
+            setTimeout(() => {
+                document.getElementById("on").style.display = "flex";
+            }, 19000);
+            setTimeout(() => {
+                document.getElementById("on").style.opacity = "0";
+            }, 19000);
+            setTimeout(() => {
+                document.getElementById("on").style.opacity = "1";
+            }, 19500);
+            setTimeout(() => {
+                document.getElementById("poweredBy").style.opacity = "1";
+            }, 21700);
+            setTimeout(() => {
+                document.getElementById("poweredBy").style.opacity = "0";
+            }, 35800);
+            setTimeout(() => {
+                document.getElementById("animation").style.marginTop = "-100px";
+            }, 37000);
+            setTimeout(() => {
+                document.getElementById("animation").style.marginTop = "-70px";
+            }, 38000);
+            setTimeout(() => {
+                document.getElementById("animation").style.marginTop = "0px";
+            }, 39000);
+            setTimeout(() => {
+                document.getElementById("on").style.display = "none";
+            }, 40000);
+            setTimeout(() => {
+                document.getElementById("body").style.backgroundColor = "white";
+            }, 41000);
+            setTimeout(() => {
+                document.getElementById("setUp").style.display = "flex";
+            }, 41450);
+            setTimeout(() => {
+                document.getElementById("setUp").style.opacity = "1";
+            }, 41500);
+            setTimeout(() => {
+                document.getElementById("setUp").style.opacity = "0";
+            }, 61400);
+            setTimeout(() => {
+                document.getElementById("setUp").style.display = "none";
+            }, 61700);
+            setTimeout(() => {
+                document.getElementById("region").style.display = "flex";
+            }, 61700);
+            setTimeout(() => {
+                document.getElementById("region").style.opacity = "1";
+            }, 61750);
         }
     </script>
 </body>
