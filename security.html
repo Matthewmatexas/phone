@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Security</title>
+</head>
+<body>
+    <style>
+        html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*START*/
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+        #body{
+            background-color: black;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            transition: 0.3s;
+        }
+        .loader2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 6px solid purple;
+  box-sizing: border-box;
+  animation: rotation 1s ease-in-out infinite;
+}
+.loader2::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  border: 6px solid purple;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+.loader3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 6px solid white;
+  box-sizing: border-box;
+  animation: rotation 1s ease-in-out infinite;
+  position: fixed;
+}
+.loader3::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  border: 6px solid white;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0eg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50%{
+      opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} 
+        </style>
+    <audio src="countdownExit.wav" id="countdownExit"></audio>
+    <audio src="siren.wav" id="siren"></audio>
+    <audio src="countdownEntry.wav" id="countdownEntry"></audio>
+    <audio src="exit.mp3" id="exit"></audio>
+    <audio src="on.mp3" id="on"></audio>
+    <audio src="off.mp3" id="off"></audio>
+    <audio src="pin.mp3" id="pin"></audio>
+    <audio src="sirenOn.mp3" id="sirenOn"></audio>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; transition: 0.3s; opacity: 1; z-index: 2; font-family: 'Poppins', sans-serif;" id="security"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-shield"></i> Security</h1><p style="position: absolute; font-size: 20px; margin-top: -200px; transition: 0.3s;" id="securityOffP">Security off.</p><p style="position: absolute; font-size: 20px; margin-top: 0; display: none; opacity: 0; transition: 0.3s;" id="securityTurnOn">Security turning on...</p><p style="position: absolute; font-size: 20px; margin-top: 0; display: none; opacity: 0; transition: 0.3s;" id="securityIsOn">Security on.</p><p style="position: absolute; font-size: 20px; margin-top: -400px; opacity: 0; transition: 0.3s;" id="securityPinP">Enter PIN.</p><div style="width: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; color: purple; display: flex; align-items: center; justify-content: center; font-size: 50px; position: absolute; transition: 0.3s;" id="securityOn" onclick="security1()"><i class="fa-solid fa-lock-open"></i></div><div style="width: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; color: purple; display: none; align-items: center; justify-content: center; font-size: 50px; position: absolute; transition: 0.3s; margin-top: 200px; " id="securityOff" onclick="security2()"><i class="fa-solid fa-lock"></i></div><div style="width: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; color: purple; display: flex; align-items: center; justify-content: center; font-size: 50px; position: absolute; transition: 0.3s; margin-top: -200px; opacity: 0;" id="securityPin"><i class="fa-solid fa-hashtag"></i></div><span class="loader2" style="position: absolute; margin-top: 200px; transition: 0.3s; opacity: 0; animation: none;" id="securityLoad"></span><div style="width: 0; height: 10px; border: 2px solid purple; opacity: 0; left: 10%; position: absolute; top: 90px; border-radius: 15px; transition: 0.3s;" id="securityBar"></div><form style="position: absolute; margin-top: 0; display: none; justify-content: center; align-items: center; transition: 0.3s; opacity: 0;" id="form"><input type="number" name="pin"  style="width: 150px; height: 40px; border-radius: 15px 0 0 15px; background-color: transparent; border: 5px solid purple; transition: 0.3s; color: purple; text-align: center;" id="pinInput" placeholder="Enter PIN."><button style="margin-left: -5px; width: 50px; height: 40px; border-radius: 0 15px 15px 0; background-color: transparent; border: 5px solid purple; transition: 0.3s; color: purple;" id="ok" type="button" onclick="check(this.form)">OK</button></form></div>
+    <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
+    <script>
+        function check(form)
+        {
+            if(form.pin.value == "9173")
+                {
+                    document.getElementById("ok").style.backgroundColor = "purple";
+                    document.getElementById("pinInput").style.color = "purple";
+                    document.getElementById("ok").style.color = "purple";
+            setTimeout(() => {
+                document.getElementById("ok").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("ok").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("ok").style.backgroundColor = "transparent";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("off").play();
+                document.getElementById("siren").pause();
+                document.getElementById('siren').currentTime = 0;
+                document.getElementById("countdownEntry").pause();
+                document.getElementById('countdownEntry').currentTime = 0;
+                document.getElementById("securityBar").style.width = "0";
+                document.getElementById("securityBar").style.animation = "none";
+                document.getElementById("securityPin").style.animation = "none";
+                document.getElementById("securityPin").style.backgroundColor = "transparent";
+                document.getElementById("securityPin").style.color = "purple";
+                document.getElementById("securityPin").style.borderColor = "purple";
+                document.getElementById("securityBar").style.opacity = "0";
+                document.getElementById("securityBar").style.backgroundColor = "transparent";
+                document.getElementById("securityBar").style.borderColor = "purple";
+                document.getElementById("form").style.opacity = "0";
+                document.getElementById("securityOn").style.opacity = "1";
+                document.getElementById("securityOn").style.marginTop = "0";
+                document.getElementById("securityOffP").style.opacity = "1";
+                document.getElementById("securityOffP").style.marginTop = "-200px";
+                document.getElementById("securityPin").style.opacity = "0";
+                document.getElementById("securityPin").style.marginTop = "200px";
+                document.getElementById("securityPinP").style.opacity = "0";
+                document.getElementById("securityPinP").style.marginTop = "600px";
+                document.getElementById("form").style.marginTop = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("form").style.display = "none";
+                document.getElementById("securityPinP").style.display = "none";
+                document.getElementById("securityPin").style.display = "none";
+                document.getElementById("siren").pause();
+            }, 1800);
+            setTimeout(() => {
+                location.replace("security.html");
+                document.getElementById("siren").pause();
+            }, 3000);
+        }
+            else{
+                document.getElementById("ok").style.backgroundColor = "purple";
+                document.getElementById("ok").style.color = "purple";
+                document.getElementById("pinInput").style.color = "purple";
+            setTimeout(() => {
+                document.getElementById("ok").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("ok").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("ok").style.backgroundColor = "transparent";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("pinInput").style.color = "red";
+                document.getElementById("ok").style.color = "red";
+            }, 1500);
+            }
+        }
+        function security1() {
+            document.getElementById("securityOn").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("securityOn").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("securityOn").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("securityOn").style.backgroundColor = "transparent";
+                document.getElementById("securityTurnOn").style.display = "block";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("exit").play();
+            }, 1100);
+            setTimeout(() => {
+                document.getElementById("countdownExit").play();
+            }, 2500);
+            setTimeout(() => {
+                document.getElementById("securityOn").style.opacity = "0";
+                document.getElementById("securityOn").style.marginTop = "-400px";
+                document.getElementById("securityOffP").style.opacity = "0";
+                document.getElementById("securityOffP").style.marginTop = "-600px";
+                document.getElementById("securityLoad").style.opacity = "1";
+                document.getElementById("securityLoad").style.marginTop = "0";
+                document.getElementById("securityTurnOn").style.opacity = "1";
+                document.getElementById("securityTurnOn").style.marginTop = "-200px";
+            }, 2700);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.animation = "blink 1s ease-in-out infinite";
+                document.getElementById("securityBar").style.width = "4%";
+                document.getElementById("securityLoad").style.animation = "rotation 1s ease-in-out infinite";
+            }, 3000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "8%";
+            }, 4000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "12%";
+            }, 5000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "16%";
+            }, 6000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "20%";
+            }, 7000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "24%";
+            }, 8000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "28%";
+            }, 9000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "32%";
+            }, 10000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "36%";
+            }, 11000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "40%";
+            }, 12000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "44%";
+            }, 13000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "48%";
+            }, 14000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "52%";
+            }, 15000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "56%";
+            }, 16000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "60%";
+            }, 17000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "64%";
+            }, 18000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "68%";
+            }, 19000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "72%";
+            }, 20000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "76%";
+                document.getElementById("securityOff").style.display = "flex";
+                document.getElementById("securityIsOn").style.display = "block";
+                document.getElementById("securityOff").style.opacity = "0";
+                document.getElementById("securityIsOn").style.opacity = "0";
+            }, 21000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "80%";
+                document.getElementById("securityBar").style.animation = "none";
+                document.getElementById("securityBar").style.opacity = "1";
+            }, 22000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.backgroundColor = "purple";
+                document.getElementById("securityLoad").style.animation = "none";
+                document.getElementById("securityLoad").style.opacity = "0";
+                document.getElementById("securityLoad").style.marginTop = "-400px";
+                document.getElementById("securityTurnOn").style.opacity = "0";
+                document.getElementById("securityTurnOn").style.marginTop = "-600px";
+                document.getElementById("securityOff").style.opacity = "1";
+                document.getElementById("securityOff").style.marginTop = "0";
+                document.getElementById("securityIsOn").style.opacity = "1";
+                document.getElementById("securityIsOn").style.marginTop = "-200px";
+                document.getElementById("on").play();
+            }, 23000);
+        }
+        function security2() {
+            document.getElementById("securityOff").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("securityOff").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("securityOff").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("securityOff").style.backgroundColor = "transparent";
+                document.getElementById("securityTurnOn").style.display = "block";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("pin").play();
+            }, 1100);
+            setTimeout(() => {
+                document.getElementById("countdownEntry").play();
+            }, 2500);
+            setTimeout(() => {
+                document.getElementById("form").style.display = "flex";
+            }, 2650);
+            setTimeout(() => {
+                document.getElementById("securityOff").style.opacity = "0";
+                document.getElementById("securityOff").style.marginTop = "400px";
+                document.getElementById("securityIsOn").style.opacity = "0";
+                document.getElementById("securityIsOn").style.marginTop = "600px";
+                document.getElementById("securityPin").style.opacity = "1";
+                document.getElementById("securityPin").style.marginTop = "0";
+                document.getElementById("securityPinP").style.opacity = "1";
+                document.getElementById("securityPinP").style.marginTop = "-200px";
+                document.getElementById("form").style.opacity = "1";
+                document.getElementById("form").style.marginTop = "200px";
+            }, 2700);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.animation = "blink 1s ease-in-out infinite";
+                document.getElementById("securityPin").style.animation = "blink 1s ease-in-out infinite";
+                document.getElementById("securityBar").style.backgroundColor = "transparent";
+            }, 3000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "78%";
+            }, 4000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "76%";
+            }, 5000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "74%";
+            }, 6000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "72%";
+            }, 7000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "70%";
+            }, 8000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "68%";
+            }, 9000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "66%";
+            }, 10000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "64%";
+            }, 11000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "62%";
+            }, 12000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "60%";
+            }, 13000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "58%";
+            }, 14000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "56%";
+            }, 15000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "54%";
+            }, 16000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "52%";
+            }, 17000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "50%";
+            }, 18000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "48%";
+            }, 19000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "46%";
+            }, 20000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "44%";
+            }, 21000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "42%";
+            }, 22000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "40%";
+            }, 23000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "38%";
+            }, 24000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "36%";
+            }, 25000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "34%";
+            }, 26000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "32%";
+            }, 27000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "30%";
+            }, 28000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "28%";
+            }, 29000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "26%";
+            }, 30000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "24%";
+            }, 31000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "24%";
+            }, 32000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "22%";
+            }, 33000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "20%";
+            }, 34000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "18%";
+            }, 35000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "16%";
+            }, 36000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "14%";
+            }, 37000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "12%";
+            }, 38000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "10%";
+            }, 39000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "8%";
+            }, 40000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "6%";
+            }, 41000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "4%";
+            }, 42000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "2%";
+            }, 43000);
+            setTimeout(() => {
+                document.getElementById("securityBar").style.width = "0";
+                document.getElementById("securityBar").style.animation = "none";
+                document.getElementById("securityPin").style.animation = "none";
+                document.getElementById("securityBar").style.opacity = "0";
+                document.getElementById("sirenOn").play();
+            }, 44000);
+            setTimeout(() => {
+                document.getElementById("siren").play();
+                document.getElementById("securityBar").style.width = "80%";
+                document.getElementById("securityBar").style.animation = "blink 0.25s ease-in-out infinite";
+                document.getElementById("securityPin").style.animation = "blink 0.25s ease-in-out infinite";
+                document.getElementById("securityPin").style.backgroundColor = "red";
+                document.getElementById("securityPin").style.color = "white";
+                document.getElementById("securityPin").style.borderColor = "red";
+                document.getElementById("securityBar").style.opacity = "1";
+                document.getElementById("securityBar").style.backgroundColor = "red";
+                document.getElementById("securityBar").style.borderColor = "red";
+            }, 46000);
+            }
+    </script>
+</body>
+</html>
