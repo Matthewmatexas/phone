@@ -180,6 +180,17 @@ table {
     <audio src="song3.mp3" id="song3audio"></audio>
     <audio src="song4.mp3" id="song4audio"></audio>
     <audio src="song5.mp3" id="song5audio"></audio>
+    <audio src="hello.mp3" id="helloAudio"></audio>
+    <audio src="wifi.mp3" id="wifiAudio"></audio>
+    <audio src="setup.mp3" id="setupAudio"></audio>
+    <audio src="region.mp3" id="regionAudio"></audio>
+    <audio src="restart.mp3" id="restartAudio"></audio>
+    <audio src="terms.mp3" id="termsAudio"></audio>
+    <audio src="finish.mp3" id="finishAudio"></audio>
+    <audio src="gestures.mp3" id="gesturesAudio"></audio>
+    <audio src="gestures2.mp3" id="gestures2Audio"></audio>
+    <audio src="mode.mp3" id="modeAudio"></audio>
+    <audio src="complete.mp3" id="completeAudio"></audio>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: white; font-size: 30px; transition: 0.3s; opacity: 0;" id="restarting"><h1 style="margin-top: -200px;">Restarting...</h1><span class="loader3"></span></div>
     <button style="width: 100px; height: 100px; color: purple; background-color: black; z-index: 5; font-size: 50px; border: 2px solid purple; border-radius: 15px 0 0 15px; position: fixed; top: 200px; right: -85px; transition: 0.3s;" onclick="power()" id="powerBtn"><i class="fa-solid fa-power-off"></i></button>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; color: white; font-size: 50px; transition: 0.3s; opacity: 0;" id="on"><h1>Motaq</h1><h1 style="font-size: 15px; position: fixed; opacity: 0; transition: 0.3s; bottom: 30px; color: darkgrey;" id="poweredBy">Powered by TONA <i class="fa-brands fa-superpowers"></i></h1><div style="width: 100%; height: 100px; position: fixed; margin-top: -200px; z-index: 5; background-color: black; transition: 0.3s;" id="animation"></div></div>
@@ -196,7 +207,7 @@ table {
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 50px; transition: 0.3s; opacity: 0; z-index: 2;" id="complete"><h1><i class="fa-solid fa-circle-check"></i> Complete!</h1><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;" id="setupOk" onclick="setupHome()"></div><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 1; transition: 0.3s;">Click the button to return home <i class="fa-solid fa-arrow-down"></i></p></div>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home2"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program1" onclick="program1Open()"><i class="fa-solid fa-shield"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program2" onclick="program2Open()"><i class="fa-solid fa-temperature-half"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program3" onclick="program3Open()"><i class="fa-solid fa-music"></i></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; z-index: 3;" id="menu" onclick="menuOpen()"></i><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; display: none; z-index: 3;" id="menu2" onclick="menuClose()"></i><div style="width: 0; height: 0; overflow: hidden; position: absolute; top: 80px; background-color: white; opacity: 0; transition: 0.3s; right: 20px; border-radius: 15px; border: none; box-shadow: 0 0 15px purple; display: flex; justify-content: center; align-items: center; flex-direction: column; color: purple;" id="menuWindow"><p style="font-size: 20px; width: 100%; height: 55px; transition: 0.3s; display: flex; justify-content: left; padding-left: 10px; align-items: center;" onclick="modeChang()" id="modeSet"><i class="fa-solid fa-chart-pie" style="margin-right: 5px;"></i> Mode settings</p></div></div>
     <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="security"><iframe src="https://matthewmatexas.github.io/phone/security.html" frameborder="0" style="width: 100%; height: 100%;"></iframe><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program1finish" onclick="program1Close()"></div></div>
-    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="weather"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-temperature-half"></i> Weather</h1><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-cloud-sun"></i></div><p style="width: 150px; height: 30px; border-radius: 15px; position: absolute; top: 230px; border: 2px solid purple; display: flex; justify-content: center; align-items: center; font-size: 20px; animation: transform 5s ease-in-out infinite;">Lentvaris</p><p style="position: absolute; top: 300px; font-size: 25px;">Clouds mostly covering sun</p><p style="position: absolute; top: 25px; left: 25px; font-size: 20px;">Feels like 16°C</p><p style="position: absolute; top: 350px; font-size: 25px;">18°C</p><p style="font-size: 20px; position: absolute; left: 15px; top: 420px;">Next 4 hours:</p><div style="width: 95%; position: absolute; top: 450px; height: 100px; border-radius: 15px; border: 5px solid purple; display: flex; justify-content: space-around; align-items: center;"><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">17°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">15°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun-rain"></i><p style="font-size: 20px;">12°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-showers-heavy"></i><p style="font-size: 20px;">8°C</p></div></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 25px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Weather</p><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program2finish" onclick="program2Close()"></div></div>
+    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="weather"><div style="width: 100%; height: 100%; background-color: purple; z-index: 3; display: flex; justify-content: center; align-items: center; transition: 0.3s;" id="weatherLoader"><span class="loader3"></span><p style="color: white; position: absolute; margin-top: -200px;">Loading Weather...</p></div><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-temperature-half"></i> Weather</h1><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-cloud-sun"></i></div><p style="width: 150px; height: 30px; border-radius: 15px; position: absolute; top: 230px; border: 2px solid purple; display: flex; justify-content: center; align-items: center; font-size: 20px; animation: transform 5s ease-in-out infinite;">Lentvaris</p><p style="position: absolute; top: 300px; font-size: 25px;">Clouds mostly covering sun</p><p style="position: absolute; top: 35px; right: 15px; font-size: 20px;">Feels like 16°C</p><p style="position: absolute; top: 350px; font-size: 25px;">18°C</p><p style="font-size: 20px; position: absolute; left: 15px; top: 420px;">Next 4 hours:</p><div style="width: 95%; position: absolute; top: 450px; height: 100px; border-radius: 15px; border: 5px solid purple; display: flex; justify-content: space-around; align-items: center;"><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">17°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">15°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun-rain"></i><p style="font-size: 20px;">12°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-showers-heavy"></i><p style="font-size: 20px;">8°C</p></div></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 25px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Weather</p><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program2finish" onclick="program2Close()"></div></div>
     <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="music"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-music"></i> Music</h1><p style="font-size: 20px; position: absolute; left: 15px; top: 250px;">Music player:</p><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; color: purple; top: 280px; transition: 0.3s;" id="song1"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics1open()">Lyrics</p><img src="song1.jpg" alt="" id="1photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Leah Kate</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">10 things I hate about you</p><i id="1play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song1play()"></i><i id="1pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song1pause()"></i><i id="1skip" onclick="Oneskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="1back" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg); opacity: 0.3;"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song2"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics2open()">Lyrics</p><img src="song2.jpg" alt="" id="2photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Olivia Rodrigo</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Driver's License</p><i id="2play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song2play()"></i><i id="2pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song2pause()"></i><i id="2skip" onclick="Twoskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="2back" onclick="Twoback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song3"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics3open()">Lyrics</p><img src="song3.jpg" alt="" id="3photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Baby Queen</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Narcissist</p><i id="3play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song3play()"></i><i id="3pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song3pause()"></i><i id="3skip" onclick="Threeskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="3back" onclick="Threeback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song4"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics4open()">Lyrics</p><img src="song4.jpg" alt="" id="4photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Adele</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Easy on me</p><i id="4play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song4play()"></i><i id="4pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song4pause()"></i><i id="4skip" onclick="Fourskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="4back" onclick="Fourback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song5"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics5open()">Lyrics</p><img src="song5.jpg" alt="" id="5photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Billie Eilish</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Happier than ever</p><i id="5play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song5play()"></i><i id="5pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song5pause()"></i><i class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px; opacity: 0.3;"></i><i id="5back" onclick="Fiveback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-music"></i></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program3finish" onclick="program3Close()"></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 25px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Music services</p></div>
     <div style="width: 95%; padding: 5px; font-size: 13px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics1"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics1close()"><i class="fa-solid fa-xmark"></i></p><pre>
 I caught you cheating
@@ -698,13 +709,14 @@ Just ... leave me alone</pre></div>
             }, 26000);
             setTimeout(() => {
                 document.getElementById("animation2").style.marginTop = "-200px";
+                document.getElementById("helloAudio").play();
             }, 27000);
             setTimeout(() => {
                 document.getElementById("animation2").style.display = "none";
             }, 29000);
             setTimeout(() => {
                 document.getElementById("continue").style.opacity = "1";
-            }, 29000);
+            }, 35000);
         }
         function next() {
             document.getElementById("continue").style.backgroundColor = "purple";
@@ -725,6 +737,7 @@ Just ... leave me alone</pre></div>
             }, 1800);
             setTimeout(() => {
                 document.getElementById("network").style.display = "flex";
+                document.getElementById("wifiAudio").play();
             }, 1800);
             setTimeout(() => {
                 document.getElementById("network").style.opacity = "1";
@@ -755,6 +768,7 @@ Just ... leave me alone</pre></div>
             }, 1500);
             setTimeout(() => {
                 document.getElementById("network").style.display = "none";
+                document.getElementById("setupAudio").play();
             }, 1800);
             setTimeout(() => {
                 document.getElementById("setUp").style.display = "flex";
@@ -773,6 +787,7 @@ Just ... leave me alone</pre></div>
             }, 22000);
             setTimeout(() => {
                 document.getElementById("region").style.opacity = "1";
+                document.getElementById("regionAudio").play();
             }, 22050);
         }
         function changeRegion() {
@@ -795,6 +810,7 @@ Just ... leave me alone</pre></div>
             }, 1450);
             setTimeout(() => {
                 document.getElementById("restart").style.opacity = "1";
+                document.getElementById("restartAudio").play();
                 document.getElementById("restart").style.transform = "scale(1.0)";
             }, 1500);
         }
@@ -939,6 +955,7 @@ Just ... leave me alone</pre></div>
             }, 61700);
             setTimeout(() => {
                 document.getElementById("region").style.opacity = "1";
+                document.getElementById("regionAudio").play();
             }, 61750);
         }
         function regionChosr() {
@@ -963,6 +980,7 @@ Just ... leave me alone</pre></div>
             }, 1800);
             setTimeout(() => {
                 document.getElementById("terms").style.opacity = "1";
+                document.getElementById("termsAudio").play();
             }, 1850);
         }
         function terms1ok() {
@@ -1046,6 +1064,7 @@ Just ... leave me alone</pre></div>
             }, 2800);
             setTimeout(() => {
                 document.getElementById("finishUp").style.display = "flex";
+                document.getElementById("finishAudio").play();
             }, 2800);
             setTimeout(() => {
                 document.getElementById("finishUp").style.opacity = "1";
@@ -1061,6 +1080,7 @@ Just ... leave me alone</pre></div>
             }, 23300);
             setTimeout(() => {
                 document.getElementById("gestures").style.opacity = "1";
+                document.getElementById("gesturesAudio").play();
             }, 23350);
         }
         function gestures1() {
@@ -1079,6 +1099,7 @@ Just ... leave me alone</pre></div>
             }, 1500);
             setTimeout(() => {
                 document.getElementById("gestures").style.opacity = "0";
+                document.getElementById("gestures2Audio").play();
             }, 1800);
             setTimeout(() => {
                 document.getElementById("gestures2").style.display = "flex";
@@ -1126,6 +1147,7 @@ Just ... leave me alone</pre></div>
             }, 5500);
             setTimeout(() => {
                 document.getElementById("mode").style.opacity = "1";
+                document.getElementById("modeAudio").play();
             }, 5550);
         }
         function lightMode() {
@@ -1240,6 +1262,7 @@ Just ... leave me alone</pre></div>
             }, 1800);
             setTimeout(() => {
                 document.getElementById("complete").style.opacity = "1";
+                document.getElementById("completeAudio").play();
             }, 1850);
         }
         function setupHome() {
@@ -1420,12 +1443,20 @@ Just ... leave me alone</pre></div>
             setTimeout(() => {
                 document.getElementById("program2").style.backgroundColor = "transparent";
                 document.getElementById("weather").style.display = "flex";
+                document.getElementById("weatherLoader").style.display = "flex";
+                document.getElementById("weatherLoader").style.opacity = "1";
             }, 900);
             setTimeout(() => {
                 document.getElementById("weather").style.height = "100%";
                 document.getElementById("weather").style.opacity = "1";
                 document.getElementById("weather").style.borderRadius = "0";
             }, 1500);
+            setTimeout(() => {
+                document.getElementById("weatherLoader").style.opacity = "0";
+            }, 6200);
+            setTimeout(() => {
+                document.getElementById("weatherLoader").style.display = "none";
+            }, 6500);
         }
         function program2Close() {
             document.getElementById("program2finish").style.backgroundColor = "transparent";
@@ -1445,44 +1476,6 @@ Just ... leave me alone</pre></div>
             }, 1500);
             setTimeout(() => {
                 document.getElementById("weather").style.display = "none";
-            }, 1800);
-        }
-        function program1Open() {
-            document.getElementById("program1").style.backgroundColor = "purple";
-            setTimeout(() => {
-                document.getElementById("program1").style.backgroundColor = "transparent";
-            }, 300);
-            setTimeout(() => {
-                document.getElementById("program1").style.backgroundColor = "purple";
-            }, 600);
-            setTimeout(() => {
-                document.getElementById("program1").style.backgroundColor = "transparent";
-                document.getElementById("security").style.display = "flex";
-            }, 900);
-            setTimeout(() => {
-                document.getElementById("security").style.height = "100%";
-                document.getElementById("security").style.opacity = "1";
-                document.getElementById("security").style.borderRadius = "0";
-            }, 1500);
-        }
-        function program1Close() {
-            document.getElementById("program1finish").style.backgroundColor = "transparent";
-            setTimeout(() => {
-                document.getElementById("program1finish").style.backgroundColor = "purple";
-            }, 300);
-            setTimeout(() => {
-                document.getElementById("program1finish").style.backgroundColor = "transparent";
-            }, 600);
-            setTimeout(() => {
-                document.getElementById("program1finish").style.backgroundColor = "purple";
-            }, 900);
-            setTimeout(() => {
-                document.getElementById("security").style.height = "200px";
-                document.getElementById("security").style.opacity = "0";
-                document.getElementById("security").style.borderRadius = "0 0 15px 15px";
-            }, 1500);
-            setTimeout(() => {
-                document.getElementById("security").style.display = "none";
             }, 1800);
         }
         function program3Open() {
