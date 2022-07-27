@@ -160,7 +160,26 @@ table {
     opacity: 1;
   }
 } 
+@keyframes transform {
+  0% {
+    transform: scale(1.0);
+  }
+  5%{
+    transform: scale(1.2);
+  }
+  10%{
+    transform: scale(1.0);
+  }
+  100% {
+    opacity: 1;
+  }
+} 
     </style>
+    <audio src="song1.mp3" id="song1audio"></audio>
+    <audio src="song2.mp3" id="song2audio"></audio>
+    <audio src="song3.mp3" id="song3audio"></audio>
+    <audio src="song4.mp3" id="song4audio"></audio>
+    <audio src="song5.mp3" id="song5audio"></audio>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: white; font-size: 30px; transition: 0.3s; opacity: 0;" id="restarting"><h1 style="margin-top: -200px;">Restarting...</h1><span class="loader3"></span></div>
     <button style="width: 100px; height: 100px; color: purple; background-color: black; z-index: 5; font-size: 50px; border: 2px solid purple; border-radius: 15px 0 0 15px; position: fixed; top: 200px; right: -85px; transition: 0.3s;" onclick="power()" id="powerBtn"><i class="fa-solid fa-power-off"></i></button>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; color: white; font-size: 50px; transition: 0.3s; opacity: 0;" id="on"><h1>Motaq</h1><h1 style="font-size: 15px; position: fixed; opacity: 0; transition: 0.3s; bottom: 30px; color: darkgrey;" id="poweredBy">Powered by TONA <i class="fa-brands fa-superpowers"></i></h1><div style="width: 100%; height: 100px; position: fixed; margin-top: -200px; z-index: 5; background-color: black; transition: 0.3s;" id="animation"></div></div>
@@ -175,8 +194,446 @@ table {
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 0; transition: 0.3s;" id="great">Great! You now know how to navigate home.</p><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div></div>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="mode"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-chart-pie"></i> Mode</h1><div style="width: 40%; height: 40%; border-radius: 15px; background-color: white; border: 2px solid darkgrey; transition: 0.3s;" id="light" onclick="lightMode()"></div><p style="position: absolute; font-size: 15px; left: 23%; bottom: 26%;">Light</p><div style="width: 40%; height: 40%; border-radius: 15px; background-color: black; margin-left: 20px; transition: 0.3s;" id="dark" onclick="darkMode()"></div><p style="position: absolute; font-size: 15px; right: 23%; bottom: 26%;">Dark</p><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">Select a mode your prefer.</p><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: none; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; transition: 0.3s; position: fixed; bottom: 130px; opacity: 0;" id="modeConfirm" onclick="modeOk()"><p><i class="fa-solid fa-circle-check"></i> Confirm</p></div><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: none; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; transition: 0.3s; position: fixed; bottom: 130px; opacity: 0;" id="modeConfirm2" onclick="modeOk2()"><p><i class="fa-solid fa-circle-check"></i> Confirm</p></div></div>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 50px; transition: 0.3s; opacity: 0; z-index: 2;" id="complete"><h1><i class="fa-solid fa-circle-check"></i> Complete!</h1><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;" id="setupOk" onclick="setupHome()"></div><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 1; transition: 0.3s;">Click the button to return home <i class="fa-solid fa-arrow-down"></i></p></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home2"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program1" onclick="program1Open()"><i class="fa-solid fa-shield"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; z-index: 3;" id="menu" onclick="menuOpen()"></i><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; display: none; z-index: 3;" id="menu2" onclick="menuClose()"></i><div style="width: 0; height: 0; overflow: hidden; position: absolute; top: 80px; background-color: white; opacity: 0; transition: 0.3s; right: 20px; border-radius: 15px; border: none; box-shadow: 0 0 15px purple; display: flex; justify-content: center; align-items: center; flex-direction: column; color: purple;" id="menuWindow"><p style="font-size: 20px; width: 100%; height: 55px; transition: 0.3s; display: flex; justify-content: left; padding-left: 10px; align-items: center;" onclick="modeChang()" id="modeSet"><i class="fa-solid fa-chart-pie" style="margin-right: 5px;"></i> Mode settings</p></div></div>
-    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; transition: 0.3s; opacity: 0; z-index: 2;" id="security"><iframe src="https://matthewmatexas.github.io/phone/security.html" frameborder="0" style="width: 100%; height: 100%;"></iframe><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program1finish" onclick="program1Close()"></div></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home2"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program1" onclick="program1Open()"><i class="fa-solid fa-shield"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program2" onclick="program2Open()"><i class="fa-solid fa-temperature-half"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program3" onclick="program3Open()"><i class="fa-solid fa-music"></i></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; z-index: 3;" id="menu" onclick="menuOpen()"></i><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; display: none; z-index: 3;" id="menu2" onclick="menuClose()"></i><div style="width: 0; height: 0; overflow: hidden; position: absolute; top: 80px; background-color: white; opacity: 0; transition: 0.3s; right: 20px; border-radius: 15px; border: none; box-shadow: 0 0 15px purple; display: flex; justify-content: center; align-items: center; flex-direction: column; color: purple;" id="menuWindow"><p style="font-size: 20px; width: 100%; height: 55px; transition: 0.3s; display: flex; justify-content: left; padding-left: 10px; align-items: center;" onclick="modeChang()" id="modeSet"><i class="fa-solid fa-chart-pie" style="margin-right: 5px;"></i> Mode settings</p></div></div>
+    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="security"><iframe src="https://matthewmatexas.github.io/phone/security.html" frameborder="0" style="width: 100%; height: 100%;"></iframe><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program1finish" onclick="program1Close()"></div></div>
+    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="weather"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-temperature-half"></i> Weather</h1><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-cloud-sun"></i></div><p style="width: 150px; height: 30px; border-radius: 15px; position: absolute; top: 230px; border: 2px solid purple; display: flex; justify-content: center; align-items: center; font-size: 20px; animation: transform 5s ease-in-out infinite;">Lentvaris</p><p style="position: absolute; top: 300px; font-size: 25px;">Clouds mostly covering sun</p><p style="position: absolute; top: 25px; left: 25px; font-size: 20px;">Feels like 16°C</p><p style="position: absolute; top: 350px; font-size: 25px;">18°C</p><p style="font-size: 20px; position: absolute; left: 15px; top: 420px;">Next 4 hours:</p><div style="width: 95%; position: absolute; top: 450px; height: 100px; border-radius: 15px; border: 5px solid purple; display: flex; justify-content: space-around; align-items: center;"><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">17°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">15°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun-rain"></i><p style="font-size: 20px;">12°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-showers-heavy"></i><p style="font-size: 20px;">8°C</p></div></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 25px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Weather</p><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program2finish" onclick="program2Close()"></div></div>
+    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="music"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-music"></i> Music</h1><p style="font-size: 20px; position: absolute; left: 15px; top: 250px;">Music player:</p><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; color: purple; top: 280px; transition: 0.3s;" id="song1"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics1open()">Lyrics</p><img src="song1.jpg" alt="" id="1photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Leah Kate</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">10 things I hate about you</p><i id="1play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song1play()"></i><i id="1pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song1pause()"></i><i id="1skip" onclick="Oneskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="1back" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg); opacity: 0.3;"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song2"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics2open()">Lyrics</p><img src="song2.jpg" alt="" id="2photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Olivia Rodrigo</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Driver's License</p><i id="2play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song2play()"></i><i id="2pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song2pause()"></i><i id="2skip" onclick="Twoskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="2back" onclick="Twoback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song3"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics3open()">Lyrics</p><img src="song3.jpg" alt="" id="3photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Baby Queen</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Narcissist</p><i id="3play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song3play()"></i><i id="3pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song3pause()"></i><i id="3skip" onclick="Threeskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="3back" onclick="Threeback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song4"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics4open()">Lyrics</p><img src="song4.jpg" alt="" id="4photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Adele</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Easy on me</p><i id="4play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song4play()"></i><i id="4pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song4pause()"></i><i id="4skip" onclick="Fourskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="4back" onclick="Fourback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song5"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px; text-decoration: underline;" onclick="lyrics5open()">Lyrics</p><img src="song5.jpg" alt="" id="5photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Billie Eilish</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Happier than ever</p><i id="5play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song5play()"></i><i id="5pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song5pause()"></i><i class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px; opacity: 0.3;"></i><i id="5back" onclick="Fiveback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-music"></i></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program3finish" onclick="program3Close()"></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 25px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Music services</p></div>
+    <div style="width: 95%; padding: 5px; font-size: 13px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics1"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics1close()"><i class="fa-solid fa-xmark"></i></p><pre>
+I caught you cheating
+
+You had the nerve to say you're sleeping
+
+..., but tell your friends
+
+That I'll be lost without you
+
+And I'll admit it
+
+Sometimes I miss when we were in it
+
+So I made a list so I never forget
+
+All the things I hate about you
+
+Ten, you're selfish, nine, you're jaded
+
+Eight, the dumbest guy I dated
+
+Seven, talk a big game 'til you're ...
+
+Only six seconds, and I had to fake it
+
+Five, you're toxic, four, can't trust you
+
+Three, you still got mommy issues
+
+Two years of your ... I can't undo
+
+One, I hate the fact that you made me love you
+
+Your friends must ... if they think you're cool
+
+A sloppy ... obsessed with his cool
+
+Keep buying bottles with your daddy's money
+
+And I don't know how I fell for your tricks
+
+You gross me out, now I've got the ick
+
+And I've got a list of why you don't get to fudge me
+
+Ten, you're selfish, nine, you're jaded
+
+Eight, the dumbest guy I dated
+
+Seven, talk a big game 'til you're ...
+
+Only six seconds and I had to fake it
+
+Five, you're toxic, four, can't trust you
+
+Three, you still got mommy issues
+
+Two years of your ... I can't undo
+
+One, I hate the fact that you made me love you
+
+You made me love you
+
+You made me love you
+
+Ooh, ah
+
+How'd you make me love you?
+
+And I'll admit it
+
+Sometimes I miss when we were in it
+
+So I made a list, yeah
+
+Ten things I hate about you
+
+Ten, you're selfish, nine, you're jaded
+
+Eight, the dumbest guy I dated
+
+Seven talk a big game 'til you're ...
+
+Only six seconds and I had to fake it
+
+Five, you're toxic, four, can't trust you
+
+Three, you still got mommy issues
+
+Two years of your ... I can't undo
+
+One, I hate the fact that you made me love you</pre></div>
+<div style="width: 95%; padding: 5px; font-size: 13px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics2"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics2close()"><i class="fa-solid fa-xmark"></i></p><pre>
+I got my driver's license last week
+
+Just like we always talked about
+
+'Cause you were so excited for me
+
+To finally drive up to your house
+
+But today I drove through the suburbs
+
+Cryin' 'cause you weren't around
+
+And you're probably with that blonde girl
+
+Who always made me doubt
+
+She's so much older than me
+
+She's everything I'm insecure about
+
+Yeah, today I drove through the suburbs
+
+'Cause how could I ever love someone else?
+
+And I know we weren't perfect but I've never felt this way for no one
+
+And I just can't imagine how you could be so okay now that I'm gone
+
+Guess you didn't mean what you wrote in that song about me
+
+'Cause you said forever, now I drive alone past your street
+
+And all my friends are tired
+
+Of hearing how much I miss you, but
+
+I kinda feel sorry for them
+
+'Cause they'll never know you the way that I do, yeah
+
+Today I drove through the suburbs
+
+And pictured I was driving home to you
+
+And I know we weren't perfect
+
+But I've never felt this way for no one, oh
+
+And I just can't imagine how you could be so okay now that I'm gone
+
+I guess you didn't mean what you wrote in that song about me
+
+'Cause you said forever, now I drive alone past your street
+
+Red lights, stop signs
+
+I still see your face in the white cars, front yards
+
+Can't drive past the places we used to go to
+
+'Cause you know I still love you, babe (ooh, ooh, ooh, ooh)
+
+Sidewalks we crossed
+
+I still hear your voice in the traffic, we're laughing
+
+Over all the noise
+
+God, I'm so blue, know we're through
+
+But you know I still love you, babe (ooh, ooh, ooh, ooh)
+
+I know we weren't perfect but I've never felt this way for no one
+
+And I just can't imagine how you could be so okay now that I'm gone
+
+'Cause you didn't mean what you wrote in that song about me
+
+'Cause you said forever, now I drive alone past your street
+
+Yeah, you said forever, now I drive alone past your street</pre></div>
+<div style="width: 95%; padding: 5px; font-size: 13px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics3"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics3close()"><i class="fa-solid fa-xmark"></i></p><pre>
+When I was just a girl, I read a magazine
+
+It said, "You can have the world if you look pretty
+
+But you'll never be enough, so avoid humiliation
+
+And stop looking for love when all you need is validation"
+
+So I grew up kind of hating myself
+
+And letting all these other people monetize my mental health
+
+By making me believe that my personal success
+
+Was dependent on my weight and the way that I dress
+
+Oh, oh
+
+I hate it when you ask me "What's your problem?"
+
+Oh, oh
+
+As if you don't already know
+
+I'm a total narcissist
+
+Yeah, that's what my problem is
+
+You're the one that started this
+
+But I'm a total nar-, nar-
+
+I see the same magazine criticize my generation
+
+And I find it kinda weird you'd critique your own creation
+
+But you still go online and call me self-obsessed
+
+Wait! Did you forget who made the internet?
+
+Oh, oh
+
+I hate it when you ask me "What's your problem?"
+
+Oh, oh
+
+As if you don't already know
+
+I'm a total narcissist
+
+Yeah, that's what my problem is
+
+You're the one that started this
+
+But I'm a total nar-, nar-
+
+I'm a total narcissist
+
+Yeah, that's what my problem is
+
+I'm empathy's arsonist
+
+Yeah, I'm a total nar-, nar-
+
+You call me apathetic
+
+You call my worth in vanity
+
+Until I'm depressed, then you get upset
+
+When all I ever do is talk about me
+
+You sell your dumb cosmetics
+
+You're setting goals I'll never reach
+
+Until I'm depressed, then you get upset
+
+When all I ever do is talk about-
+
+I'm a total narcissist
+
+Yeah, that's what my problem is
+
+You're the one that started this
+
+But I'm a total nar-, nar-
+
+I'm a total narcissist
+
+Yeah, that's what my problem is
+
+You're the one that started this
+
+But I'm a total nar-, nar-
+
+I'm a total narcissist
+
+Yeah, that's what my problem is
+
+I'm empathy's arsonist
+
+Yeah, I'm a total nar-, nar-</pre></div>
+<div style="width: 95%; padding: 5px; font-size: 13px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics4"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics4close()"><i class="fa-solid fa-xmark"></i></p><pre>
+There ain't no gold in this river
+
+That I've been washin' my hands in forever
+
+I know there is hope in these waters
+
+But I can't bring myself to swim
+
+When I am drowning in this silence
+
+Baby, let me in
+
+Go easy on me, baby
+
+I was still a child
+
+Didn't get the chance to
+
+Feel the world around me
+
+I had no time to choose
+
+What I chose to do
+
+So go easy on me
+
+There ain't no room for things to change
+
+When we are both so deeply stuck in our ways
+
+You can't deny how hard I have tried
+
+I changed who I was to put you both first
+
+But now I give up
+
+Go easy on me, baby
+
+I was still a child
+
+Didn't get the chance to
+
+Feel the world around me
+
+Had no time to choose
+
+What I chose to do
+
+So go easy on me
+
+I had good intentions
+
+And the highest hopes
+
+But I know right now
+
+That probably doesn't even show
+
+Go easy on me, baby
+
+I was still a child
+
+I didn't get the chance to
+
+Feel the world around me
+
+I had no time to choose
+
+What I chose to do
+
+So go easy on me</pre></div>
+<div style="width: 95%; padding: 5px; font-size: 13px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics5"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics5close()"><i class="fa-solid fa-xmark"></i></p><pre>
+When I'm away from you, I'm happier than ever
+
+Wish I could explain it better
+
+I wish it wasn't true
+
+Give me a day or two to think of something clever
+
+To write myself a letter
+
+To tell me what to do, mm-mmm
+
+Do you read my interviews?
+
+Or do you skip my avenue? (My avenue)
+
+When you (when you) said you were passing through
+
+Was I even on your way?
+
+I knew when I asked you to (when I asked you to)
+
+Be cool about what I was telling you
+
+You'd do the opposite of what you said you'd do (what you said you'd do)
+
+And I'd end up more afraid
+
+Don't say it isn't fair
+
+You clearly weren't aware that you made me miserable
+
+So if you really wanna know
+
+When I'm away from you (when I'm away from you)
+
+I'm happier than ever (happier than ever)
+
+Wish I could explain it better (wish I could explain it better)
+
+I wish it wasn't true (wish it wasn't true), mmm-hmm
+
+You call me again, drunk in your Benz
+
+Driving home under the influence
+
+You scared me to death, but I'm wasting my breath
+
+'Cause you only listen to your ... friends
+
+I don't relate to you
+
+I don't relate to you, no
+
+'Cause I'd never treat me this ...
+
+You made me hate this city
+
+And I don't talk ... about you on the internet
+
+Never told anyone anything bad
+
+'Cause that ... embarrassing, you were my everything
+
+And all that you did was make me ... sad
+
+So don't waste the time I don't have
+
+And don't try to make me feel bad
+
+I could talk about every time that you showed up on time
+
+But I'd have an empty line 'cause you never did
+
+Never paid any mind to my mother or friends
+
+So I shut 'em all out for you 'cause I was a kid
+
+You ruined everything good
+
+Always said you were misunderstood
+
+Made all my moments your own
+
+Just ... leave me alone</pre></div>
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
         function power() {
@@ -691,6 +1148,20 @@ table {
                 document.getElementById("menuWindow").style.backgroundColor = "white";
                 document.getElementById("security").style.backgroundColor = "white";
                 document.getElementById("security").style.color = "black";
+                document.getElementById("music").style.backgroundColor = "white";
+                document.getElementById("music").style.color = "black";
+                document.getElementById("weather").style.backgroundColor = "white";
+                document.getElementById("weather").style.color = "black";
+                document.getElementById("lyrics1").style.backgroundColor = "white";
+                document.getElementById("lyrics1").style.color = "black";
+                document.getElementById("lyrics2").style.backgroundColor = "white";
+                document.getElementById("lyrics2").style.color = "black";
+                document.getElementById("lyrics3").style.backgroundColor = "white";
+                document.getElementById("lyrics3").style.color = "black";
+                document.getElementById("lyrics4").style.backgroundColor = "white";
+                document.getElementById("lyrics4").style.color = "black";
+                document.getElementById("lyrics5").style.backgroundColor = "white";
+                document.getElementById("lyrics5").style.color = "black";
                 document.getElementById("home2").style.color = "black";
                 document.getElementById("light").style.border = "2px solid purple";
                 document.getElementById("dark").style.border = "none";
@@ -722,6 +1193,20 @@ table {
                 document.getElementById("menuWindow").style.backgroundColor = "black";
                 document.getElementById("security").style.backgroundColor = "black";
                 document.getElementById("security").style.color = "white";
+                document.getElementById("music").style.backgroundColor = "black";
+                document.getElementById("music").style.color = "white";
+                document.getElementById("weather").style.backgroundColor = "black";
+                document.getElementById("weather").style.color = "white";
+                document.getElementById("lyrics1").style.backgroundColor = "black";
+                document.getElementById("lyrics1").style.color = "white";
+                document.getElementById("lyrics2").style.backgroundColor = "black";
+                document.getElementById("lyrics2").style.color = "white";
+                document.getElementById("lyrics3").style.backgroundColor = "black";
+                document.getElementById("lyrics3").style.color = "white";
+                document.getElementById("lyrics4").style.backgroundColor = "black";
+                document.getElementById("lyrics4").style.color = "white";
+                document.getElementById("lyrics5").style.backgroundColor = "black";
+                document.getElementById("lyrics5").style.color = "white";
                 document.getElementById("home2").style.color = "white";
                 document.getElementById("dark").style.border = "2px solid purple";
                 document.getElementById("light").style.border = "none";
@@ -923,6 +1408,406 @@ table {
             setTimeout(() => {
                 document.getElementById("security").style.display = "none";
             }, 1800);
+        }
+        function program2Open() {
+            document.getElementById("program2").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("program2").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("program2").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("program2").style.backgroundColor = "transparent";
+                document.getElementById("weather").style.display = "flex";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("weather").style.height = "100%";
+                document.getElementById("weather").style.opacity = "1";
+                document.getElementById("weather").style.borderRadius = "0";
+            }, 1500);
+        }
+        function program2Close() {
+            document.getElementById("program2finish").style.backgroundColor = "transparent";
+            setTimeout(() => {
+                document.getElementById("program2finish").style.backgroundColor = "purple";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("program2finish").style.backgroundColor = "transparent";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("program2finish").style.backgroundColor = "purple";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("weather").style.height = "200px";
+                document.getElementById("weather").style.opacity = "0";
+                document.getElementById("weather").style.borderRadius = "0 0 15px 15px";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("weather").style.display = "none";
+            }, 1800);
+        }
+        function program1Open() {
+            document.getElementById("program1").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("program1").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("program1").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("program1").style.backgroundColor = "transparent";
+                document.getElementById("security").style.display = "flex";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("security").style.height = "100%";
+                document.getElementById("security").style.opacity = "1";
+                document.getElementById("security").style.borderRadius = "0";
+            }, 1500);
+        }
+        function program1Close() {
+            document.getElementById("program1finish").style.backgroundColor = "transparent";
+            setTimeout(() => {
+                document.getElementById("program1finish").style.backgroundColor = "purple";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("program1finish").style.backgroundColor = "transparent";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("program1finish").style.backgroundColor = "purple";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("security").style.height = "200px";
+                document.getElementById("security").style.opacity = "0";
+                document.getElementById("security").style.borderRadius = "0 0 15px 15px";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("security").style.display = "none";
+            }, 1800);
+        }
+        function program3Open() {
+            document.getElementById("program3").style.backgroundColor = "purple";
+            setTimeout(() => {
+                document.getElementById("program3").style.backgroundColor = "transparent";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("program3").style.backgroundColor = "purple";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("program3").style.backgroundColor = "transparent";
+                document.getElementById("music").style.display = "flex";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("music").style.height = "100%";
+                document.getElementById("music").style.opacity = "1";
+                document.getElementById("music").style.borderRadius = "0";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("1photo").style.animation = "rotation 6s linear infinite";
+                document.getElementById("1pause").style.display = "block";
+                document.getElementById("1play").style.display = "none";
+                document.getElementById("song1audio").play();
+            }, 2000);
+        }
+        function program3Close() {
+            document.getElementById("program3finish").style.backgroundColor = "transparent";
+            setTimeout(() => {
+                document.getElementById("program3finish").style.backgroundColor = "purple";
+            }, 300);
+            setTimeout(() => {
+                document.getElementById("program3finish").style.backgroundColor = "transparent";
+            }, 600);
+            setTimeout(() => {
+                document.getElementById("program3finish").style.backgroundColor = "purple";
+            }, 900);
+            setTimeout(() => {
+                document.getElementById("music").style.height = "200px";
+                document.getElementById("music").style.opacity = "0";
+                document.getElementById("music").style.borderRadius = "0 0 15px 15px";
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById("music").style.display = "none";
+            }, 1800);
+        }
+        function song1play() {
+            document.getElementById("1photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("1pause").style.display = "block";
+            document.getElementById("1play").style.display = "none";
+            document.getElementById("song1audio").play();
+        }
+        function song1pause() {
+            document.getElementById("1photo").style.animation = "none";
+            document.getElementById("1pause").style.display = "none";
+            document.getElementById("1play").style.display = "block";
+            document.getElementById("song1audio").pause();
+        }
+        function Oneskip() {
+            document.getElementById("1photo").style.animation = "none";
+            document.getElementById("1pause").style.display = "none";
+            document.getElementById("1play").style.display = "block";
+            document.getElementById("song1audio").pause();
+            document.getElementById('song1audio').currentTime = 0;
+            document.getElementById("song1").style.marginLeft = "-200%";
+            document.getElementById("song2").style.marginRight = "0%";
+            document.getElementById("2pause").style.display = "block";
+            document.getElementById("2play").style.display = "none";
+            document.getElementById("song2audio").play();
+            document.getElementById("2photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics1").style.bottom = "-60%";
+        }
+        var music1 = document.getElementById("song1audio");
+        music1.onended = function() {
+            document.getElementById("1photo").style.animation = "none";
+            document.getElementById("1pause").style.display = "none";
+            document.getElementById("1play").style.display = "block";
+            document.getElementById("song1audio").pause();
+            document.getElementById('song1audio').currentTime = 0;
+            document.getElementById("song1").style.marginLeft = "-200%";
+            document.getElementById("song2").style.marginRight = "0%";
+            document.getElementById("2pause").style.display = "block";
+            document.getElementById("2play").style.display = "none";
+            document.getElementById("song2audio").play();
+            document.getElementById("2photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics1").style.bottom = "-60%";
+        };
+        function song2play() {
+            document.getElementById("2photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("2pause").style.display = "block";
+            document.getElementById("2play").style.display = "none";
+            document.getElementById("song2audio").play();
+        }
+        function song2pause() {
+            document.getElementById("2photo").style.animation = "none";
+            document.getElementById("2pause").style.display = "none";
+            document.getElementById("2play").style.display = "block";
+            document.getElementById("song2audio").pause();
+        }
+        function Twoback() {
+            document.getElementById("2photo").style.animation = "none";
+            document.getElementById("2pause").style.display = "none";
+            document.getElementById("2play").style.display = "block";
+            document.getElementById("song2audio").pause();
+            document.getElementById('song2audio').currentTime = 0;
+            document.getElementById("song2").style.marginRight = "-200%";
+            document.getElementById("song1").style.marginLeft = "0";
+            document.getElementById("1pause").style.display = "block";
+            document.getElementById("1play").style.display = "none";
+            document.getElementById("song1audio").play();
+            document.getElementById("1photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics2").style.bottom = "-60%";
+        }
+        function Twoskip() {
+            document.getElementById("2photo").style.animation = "none";
+            document.getElementById("2pause").style.display = "none";
+            document.getElementById("2play").style.display = "block";
+            document.getElementById("song2audio").pause();
+            document.getElementById('song2audio').currentTime = 0;
+            document.getElementById("song2").style.marginLeft = "-200%";
+            document.getElementById("song3").style.marginRight = "0%";
+            document.getElementById("3pause").style.display = "block";
+            document.getElementById("3play").style.display = "none";
+            document.getElementById("song3audio").play();
+            document.getElementById("3photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics2").style.bottom = "-60%";
+        }
+        var music2 = document.getElementById("song2audio");
+        music2.onended = function() {
+            document.getElementById("2photo").style.animation = "none";
+            document.getElementById("2pause").style.display = "none";
+            document.getElementById("2play").style.display = "block";
+            document.getElementById("song2audio").pause();
+            document.getElementById('song2audio').currentTime = 0;
+            document.getElementById("song2").style.marginLeft = "-200%";
+            document.getElementById("song3").style.marginRight = "0%";
+            document.getElementById("3pause").style.display = "block";
+            document.getElementById("3play").style.display = "none";
+            document.getElementById("song3audio").play();
+            document.getElementById("3photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics2").style.bottom = "-60%";
+        };
+        function song3play() {
+            document.getElementById("3photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("3pause").style.display = "block";
+            document.getElementById("3play").style.display = "none";
+            document.getElementById("song3audio").play();
+        }
+        function song3pause() {
+            document.getElementById("3photo").style.animation = "none";
+            document.getElementById("3pause").style.display = "none";
+            document.getElementById("3play").style.display = "block";
+            document.getElementById("song3audio").pause();
+        }
+        function Threeback() {
+            document.getElementById("3photo").style.animation = "none";
+            document.getElementById("3pause").style.display = "none";
+            document.getElementById("3play").style.display = "block";
+            document.getElementById("song3audio").pause();
+            document.getElementById('song3audio').currentTime = 0;
+            document.getElementById("song3").style.marginRight = "-200%";
+            document.getElementById("song2").style.marginLeft = "0";
+            document.getElementById("2pause").style.display = "block";
+            document.getElementById("2play").style.display = "none";
+            document.getElementById("song2audio").play();
+            document.getElementById("2photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics3").style.bottom = "-60%";
+        }
+        function Threeskip() {
+            document.getElementById("3photo").style.animation = "none";
+            document.getElementById("3pause").style.display = "none";
+            document.getElementById("3play").style.display = "block";
+            document.getElementById("song3audio").pause();
+            document.getElementById('song3audio').currentTime = 0;
+            document.getElementById("song3").style.marginLeft = "-200%";
+            document.getElementById("song4").style.marginRight = "0%";
+            document.getElementById("4pause").style.display = "block";
+            document.getElementById("4play").style.display = "none";
+            document.getElementById("song4audio").play();
+            document.getElementById("4photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics3").style.bottom = "-60%";
+        }
+        var music3 = document.getElementById("song3audio");
+        music3.onended = function() {
+            document.getElementById("3photo").style.animation = "none";
+            document.getElementById("3pause").style.display = "none";
+            document.getElementById("3play").style.display = "block";
+            document.getElementById("song3audio").pause();
+            document.getElementById('song3audio').currentTime = 0;
+            document.getElementById("song3").style.marginLeft = "-200%";
+            document.getElementById("song4").style.marginRight = "0%";
+            document.getElementById("4pause").style.display = "block";
+            document.getElementById("4play").style.display = "none";
+            document.getElementById("song4audio").play();
+            document.getElementById("4photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics3").style.bottom = "-60%";
+        };
+        function song4play() {
+            document.getElementById("4photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("4pause").style.display = "block";
+            document.getElementById("4play").style.display = "none";
+            document.getElementById("song4audio").play();
+        }
+        function song4pause() {
+            document.getElementById("4photo").style.animation = "none";
+            document.getElementById("4pause").style.display = "none";
+            document.getElementById("4play").style.display = "block";
+            document.getElementById("song4audio").pause();
+        }
+        function Fourback() {
+            document.getElementById("4photo").style.animation = "none";
+            document.getElementById("4pause").style.display = "none";
+            document.getElementById("4play").style.display = "block";
+            document.getElementById("song4audio").pause();
+            document.getElementById('song4audio').currentTime = 0;
+            document.getElementById("song4").style.marginRight = "-200%";
+            document.getElementById("song3").style.marginLeft = "0";
+            document.getElementById("3pause").style.display = "block";
+            document.getElementById("3play").style.display = "none";
+            document.getElementById("song3audio").play();
+            document.getElementById("3photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics4").style.bottom = "-60%";
+        }
+        function Fourskip() {
+            document.getElementById("4photo").style.animation = "none";
+            document.getElementById("4pause").style.display = "none";
+            document.getElementById("4play").style.display = "block";
+            document.getElementById("song4audio").pause();
+            document.getElementById('song4audio').currentTime = 0;
+            document.getElementById("song4").style.marginLeft = "-200%";
+            document.getElementById("song5").style.marginRight = "0%";
+            document.getElementById("5pause").style.display = "block";
+            document.getElementById("5play").style.display = "none";
+            document.getElementById("song5audio").play();
+            document.getElementById("5photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics4").style.bottom = "-60%";
+        }
+        var music4 = document.getElementById("song4audio");
+        music4.onended = function() {
+            document.getElementById("4photo").style.animation = "none";
+            document.getElementById("4pause").style.display = "none";
+            document.getElementById("4play").style.display = "block";
+            document.getElementById("song4audio").pause();
+            document.getElementById('song4audio').currentTime = 0;
+            document.getElementById("song4").style.marginLeft = "-200%";
+            document.getElementById("song5").style.marginRight = "0%";
+            document.getElementById("5pause").style.display = "block";
+            document.getElementById("5play").style.display = "none";
+            document.getElementById("song5audio").play();
+            document.getElementById("5photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics4").style.bottom = "-60%";
+        };
+        function song5play() {
+            document.getElementById("5photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("5pause").style.display = "block";
+            document.getElementById("5play").style.display = "none";
+            document.getElementById("song5audio").play();
+        }
+        function song5pause() {
+            document.getElementById("5photo").style.animation = "none";
+            document.getElementById("5pause").style.display = "none";
+            document.getElementById("5play").style.display = "block";
+            document.getElementById("song5audio").pause();
+        }
+        function Fiveback() {
+            document.getElementById("5photo").style.animation = "none";
+            document.getElementById("5pause").style.display = "none";
+            document.getElementById("5play").style.display = "block";
+            document.getElementById("song5audio").pause();
+            document.getElementById('song5audio').currentTime = 0;
+            document.getElementById("song5").style.marginRight = "-200%";
+            document.getElementById("song4").style.marginLeft = "0";
+            document.getElementById("4pause").style.display = "block";
+            document.getElementById("4play").style.display = "none";
+            document.getElementById("song4audio").play();
+            document.getElementById("4photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics5").style.bottom = "-60%";
+        }
+        var music5 = document.getElementById("song5audio");
+        music5.onended = function() {
+            document.getElementById("5photo").style.animation = "none";
+            document.getElementById("5pause").style.display = "none";
+            document.getElementById("5play").style.display = "block";
+            document.getElementById("song5audio").pause();
+            document.getElementById('song5audio').currentTime = 0;
+            document.getElementById("song5").style.marginRight = "-200%";
+            document.getElementById("song4").style.marginRight = "-200%";
+            document.getElementById("song3").style.marginRight = "-200%";
+            document.getElementById("song2").style.marginRight = "-200%";
+            document.getElementById("song5").style.marginLeft = "0";
+            document.getElementById("song4").style.marginLeft = "0";
+            document.getElementById("song3").style.marginLeft = "0";
+            document.getElementById("song2").style.marginLeft = "0";
+            document.getElementById("song1").style.marginLeft = "0%";
+            document.getElementById("lyrics5").style.bottom = "-60%";
+        };
+        function lyrics1open() {
+            document.getElementById("lyrics1").style.bottom = "25px";
+        }
+        function lyrics1close() {
+            document.getElementById("lyrics1").style.bottom = "-60%";
+        }
+        function lyrics2open() {
+            document.getElementById("lyrics2").style.bottom = "25px";
+        }
+        function lyrics2close() {
+            document.getElementById("lyrics2").style.bottom = "-60%";
+        }
+        function lyrics3open() {
+            document.getElementById("lyrics3").style.bottom = "25px";
+        }
+        function lyrics3close() {
+            document.getElementById("lyrics3").style.bottom = "-60%";
+        }
+        function lyrics4open() {
+            document.getElementById("lyrics4").style.bottom = "25px";
+        }
+        function lyrics4close() {
+            document.getElementById("lyrics4").style.bottom = "-60%";
+        }
+        function lyrics5open() {
+            document.getElementById("lyrics5").style.bottom = "25px";
+        }
+        function lyrics5close() {
+            document.getElementById("lyrics5").style.bottom = "-60%";
         }
     </script>
 </body>
