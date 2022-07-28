@@ -196,6 +196,7 @@ table {
     <audio src="gestures2.mp3" id="gestures2Audio"></audio>
     <audio src="mode.mp3" id="modeAudio"></audio>
     <audio src="complete.mp3" id="completeAudio"></audio>
+    <audio src="playlist.mp3" id="playlistAudio"></audio>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: white; font-size: 30px; transition: 0.3s; opacity: 0;" id="restarting"><h1 style="margin-top: -200px;">Restarting...</h1><span class="loader3"></span></div>
     <button style="width: 100px; height: 100px; color: purple; background-color: black; z-index: 5; font-size: 50px; border: 2px solid purple; border-radius: 15px 0 0 15px; position: fixed; top: 200px; right: -85px; transition: 0.3s;" onclick="power()" id="powerBtn"><i class="fa-solid fa-power-off"></i></button>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; color: white; font-size: 50px; transition: 0.3s; opacity: 0;" id="on"><h1>Motaq</h1><h1 style="font-size: 15px; position: fixed; opacity: 0; transition: 0.3s; bottom: 30px; color: darkgrey;" id="poweredBy">Powered by TONA <i class="fa-brands fa-superpowers"></i></h1><div style="width: 100%; height: 100px; position: fixed; margin-top: -200px; z-index: 5; background-color: black; transition: 0.3s;" id="animation"></div></div>
@@ -1564,6 +1565,16 @@ I wanna run away</pre></div>
                 document.getElementById("lyrics4").style.color = "black";
                 document.getElementById("lyrics5").style.backgroundColor = "white";
                 document.getElementById("lyrics5").style.color = "black";
+                document.getElementById("lyrics6").style.backgroundColor = "white";
+                document.getElementById("lyrics6").style.color = "black";
+                document.getElementById("lyrics7").style.backgroundColor = "white";
+                document.getElementById("lyrics7").style.color = "black";
+                document.getElementById("lyrics8").style.backgroundColor = "white";
+                document.getElementById("lyrics8").style.color = "black";
+                document.getElementById("lyrics9").style.backgroundColor = "white";
+                document.getElementById("lyrics9").style.color = "black";
+                document.getElementById("lyrics10").style.backgroundColor = "white";
+                document.getElementById("lyrics10").style.color = "black";
                 document.getElementById("home2").style.color = "black";
                 document.getElementById("light").style.border = "2px solid purple";
                 document.getElementById("dark").style.border = "none";
@@ -1609,6 +1620,16 @@ I wanna run away</pre></div>
                 document.getElementById("lyrics4").style.color = "white";
                 document.getElementById("lyrics5").style.backgroundColor = "black";
                 document.getElementById("lyrics5").style.color = "white";
+                document.getElementById("lyrics6").style.backgroundColor = "black";
+                document.getElementById("lyrics6").style.color = "white";
+                document.getElementById("lyrics7").style.backgroundColor = "black";
+                document.getElementById("lyrics7").style.color = "white";
+                document.getElementById("lyrics8").style.backgroundColor = "black";
+                document.getElementById("lyrics8").style.color = "white";
+                document.getElementById("lyrics9").style.backgroundColor = "black";
+                document.getElementById("lyrics9").style.color = "white";
+                document.getElementById("lyrics10").style.backgroundColor = "black";
+                document.getElementById("lyrics10").style.color = "white";
                 document.getElementById("home2").style.color = "white";
                 document.getElementById("dark").style.border = "2px solid purple";
                 document.getElementById("light").style.border = "none";
@@ -1897,6 +1918,76 @@ I wanna run away</pre></div>
                 document.getElementById("music").style.height = "200px";
                 document.getElementById("music").style.opacity = "0";
                 document.getElementById("music").style.borderRadius = "0 0 15px 15px";
+                document.getElementById("10photo").style.animation = "none";
+            document.getElementById("10pause").style.display = "none";
+            document.getElementById("10play").style.display = "block";
+            document.getElementById("song10audio").pause();
+            document.getElementById('song10audio').currentTime = 0;
+            document.getElementById("9pause").style.display = "none";
+            document.getElementById("9play").style.display = "block";
+            document.getElementById("song9audio").pause();
+            document.getElementById('song9audio').currentTime = 0;
+            document.getElementById("8pause").style.display = "none";
+            document.getElementById("8play").style.display = "block";
+            document.getElementById("song8audio").pause();
+            document.getElementById('song8audio').currentTime = 0;
+            document.getElementById("7pause").style.display = "none";
+            document.getElementById("7play").style.display = "block";
+            document.getElementById("song7audio").pause();
+            document.getElementById('song7audio').currentTime = 0;
+            document.getElementById("6pause").style.display = "none";
+            document.getElementById("6play").style.display = "block";
+            document.getElementById("song6audio").pause();
+            document.getElementById('song6audio').currentTime = 0;
+            document.getElementById("5pause").style.display = "none";
+            document.getElementById("5play").style.display = "block";
+            document.getElementById("song5audio").pause();
+            document.getElementById('song5audio').currentTime = 0;
+            document.getElementById("4pause").style.display = "none";
+            document.getElementById("4play").style.display = "block";
+            document.getElementById("song4audio").pause();
+            document.getElementById('song4audio').currentTime = 0;
+            document.getElementById("3pause").style.display = "none";
+            document.getElementById("3play").style.display = "block";
+            document.getElementById("song3audio").pause();
+            document.getElementById('song3audio').currentTime = 0;
+            document.getElementById("2pause").style.display = "none";
+            document.getElementById("2play").style.display = "block";
+            document.getElementById("song2audio").pause();
+            document.getElementById('song2audio').currentTime = 0;
+            document.getElementById("1pause").style.display = "none";
+            document.getElementById("1play").style.display = "block";
+            document.getElementById("song1audio").pause();
+            document.getElementById('song1audio').currentTime = 0;
+            document.getElementById("song10").style.marginRight = "-200%";
+            document.getElementById("song9").style.marginRight = "-200%";
+            document.getElementById("song8").style.marginRight = "-200%";
+            document.getElementById("song7").style.marginRight = "-200%";
+            document.getElementById("song6").style.marginRight = "-200%";
+            document.getElementById("song5").style.marginRight = "-200%";
+            document.getElementById("song4").style.marginRight = "-200%";
+            document.getElementById("song3").style.marginRight = "-200%";
+            document.getElementById("song2").style.marginRight = "-200%";
+            document.getElementById("song10").style.marginLeft = "0";
+            document.getElementById("song9").style.marginLeft = "0";
+            document.getElementById("song8").style.marginLeft = "0";
+            document.getElementById("song7").style.marginLeft = "0";
+            document.getElementById("song6").style.marginLeft = "0";
+            document.getElementById("song5").style.marginLeft = "0";
+            document.getElementById("song4").style.marginLeft = "0";
+            document.getElementById("song3").style.marginLeft = "0";
+            document.getElementById("song2").style.marginLeft = "0";
+            document.getElementById("song1").style.marginLeft = "0%";
+            document.getElementById("lyrics10").style.bottom = "-60%";
+            document.getElementById("lyrics9").style.bottom = "-60%";
+            document.getElementById("lyrics8").style.bottom = "-60%";
+            document.getElementById("lyrics7").style.bottom = "-60%";
+            document.getElementById("lyrics6").style.bottom = "-60%";
+            document.getElementById("lyrics5").style.bottom = "-60%";
+            document.getElementById("lyrics4").style.bottom = "-60%";
+            document.getElementById("lyrics3").style.bottom = "-60%";
+            document.getElementById("lyrics2").style.bottom = "-60%";
+            document.getElementById("lyrics1").style.bottom = "-60%";
             }, 1500);
             setTimeout(() => {
                 document.getElementById("music").style.display = "none";
@@ -2436,6 +2527,7 @@ I wanna run away</pre></div>
             document.getElementById("song2").style.marginLeft = "0";
             document.getElementById("song1").style.marginLeft = "0%";
             document.getElementById("lyrics10").style.bottom = "-60%";
+            document.getElementById("playlistAudio").play();
         };
         function lyrics1open() {
             document.getElementById("lyrics1").style.bottom = "25px";
