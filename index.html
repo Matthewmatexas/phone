@@ -182,6 +182,9 @@ table {
     <audio src="song5.mp3" id="song5audio"></audio>
     <audio src="song6.mp3" id="song6audio"></audio>
     <audio src="song7.mp3" id="song7audio"></audio>
+    <audio src="song8.mp3" id="song8audio"></audio>
+    <audio src="song9.mp3" id="song9audio"></audio>
+    <audio src="song10.mp3" id="song10audio"></audio>
     <audio src="hello.mp3" id="helloAudio"></audio>
     <audio src="wifi.mp3" id="wifiAudio"></audio>
     <audio src="setup.mp3" id="setupAudio"></audio>
@@ -203,14 +206,15 @@ table {
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="terms"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-receipt"></i> Terms & conditions</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">Accepting to terms & conditions ir required, to accurately measure data, etc.</p><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 200px; transition: 0.3s;" id="terms1" onclick="terms1ok()"><p><i class="fa-solid fa-location-dot" style="transition: 0.3s;" id="location1"></i><i class="fa-solid fa-circle-check" style="transition: 0.3s; opacity: 0; position: absolute;" id="location2"></i> I agree to enable Location</p></div><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 270px; transition: 0.3s; opacity: 0; pointer-events: none;" id="terms2" onclick="terms2ok()"><p><i class="fa-solid fa-receipt" style="transition: 0.3s;" id="termsCon1"></i><i class="fa-solid fa-circle-check" style="transition: 0.3s; opacity: 0; position: absolute;" id="termsCon2"></i> I agree to terms & conditions</p></div><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; margin-top: 20px; position: fixed; top: 340px; transition: 0.3s; opacity: 0; pointer-events: none;" id="terms3" onclick="terms3ok()"><p><i class="fa-solid fa-share-from-square" style="transition: 0.3s;" id="data1"></i><i class="fa-solid fa-circle-check" style="transition: 0.3s; opacity: 0; position: absolute;" id="data2"></i> I agree to share data</p></div></div>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="finishUp"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-user-gear"></i> Finishing up...</h1><span class="loader2" id="loader2"></span><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">This may take a few minutes to complete.</p></div>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="gestures"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-mobile"></i> Gestures</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">Gestures are used for navigation.</p><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: flex; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; transition: 0.3s;" id="gesture" onclick="gestures1()"><p><i class="fa-solid fa-icons"></i> View tutorial of gestures</p></div></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center; z-index: 2; background-color: white;" id="gestures2"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-mobile"></i> Gestures</h1><h1 style="font-size: 20px; margin-bottom: 50px; color: purple;">Click the button at the bottom of the screen to return to homescreen.</h1><h1 style="color: purple;"><i class="fa-solid fa-arrow-down"></i></h1><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;" id="bottomBtn" onclick="home()"></div></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 0; transition: 0.3s;" id="great">Great! You now know how to navigate home.</p><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center; z-index: 2; background-color: white;" id="gestures2"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-mobile"></i> Gestures</h1><h1 style="font-size: 20px; margin-bottom: 50px; color: purple;">Click the button at the bottom of the screen to return to homescreen.</h1><h1 style="color: purple;"><i class="fa-solid fa-arrow-down"></i></h1><div style="width: 95%; height: 10px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;" id="bottomBtn" onclick="home()"></div></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 0; transition: 0.3s;" id="great">Great! You now know how to navigate home.</p><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 10px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div></div>
     <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="mode"><h1 style="position: fixed; top: 100px;"><i class="fa-solid fa-chart-pie"></i> Mode</h1><div style="width: 40%; height: 40%; border-radius: 15px; background-color: white; border: 2px solid darkgrey; transition: 0.3s;" id="light" onclick="lightMode()"></div><p style="position: absolute; font-size: 15px; left: 23%; bottom: 26%;">Light</p><div style="width: 40%; height: 40%; border-radius: 15px; background-color: black; margin-left: 20px; transition: 0.3s;" id="dark" onclick="darkMode()"></div><p style="position: absolute; font-size: 15px; right: 23%; bottom: 26%;">Dark</p><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify;">Select a mode your prefer.</p><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: none; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; transition: 0.3s; position: fixed; bottom: 130px; opacity: 0;" id="modeConfirm" onclick="modeOk()"><p><i class="fa-solid fa-circle-check"></i> Confirm</p></div><div style="font-size: 20px; width: 90%; height: 50px; border: 2px solid purple; color: purple; display: none; justify-content: left; padding-left: 15px; align-items: center; border-radius: 15px; transition: 0.3s; position: fixed; bottom: 130px; opacity: 0;" id="modeConfirm2" onclick="modeOk2()"><p><i class="fa-solid fa-circle-check"></i> Confirm</p></div></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 50px; transition: 0.3s; opacity: 0; z-index: 2;" id="complete"><h1><i class="fa-solid fa-circle-check"></i> Complete!</h1><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;" id="setupOk" onclick="setupHome()"></div><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 1; transition: 0.3s;">Click the button to return home <i class="fa-solid fa-arrow-down"></i></p></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home2"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program1" onclick="program1Open()"><i class="fa-solid fa-shield"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program2" onclick="program2Open()"><i class="fa-solid fa-temperature-half"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program3" onclick="program3Open()"><i class="fa-solid fa-music"></i></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; z-index: 3;" id="menu" onclick="menuOpen()"></i><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; display: none; z-index: 3;" id="menu2" onclick="menuClose()"></i><div style="width: 0; height: 0; overflow: hidden; position: absolute; top: 80px; background-color: white; opacity: 0; transition: 0.3s; right: 20px; border-radius: 15px; border: none; box-shadow: 0 0 15px purple; display: flex; justify-content: center; align-items: center; flex-direction: column; color: purple;" id="menuWindow"><p style="font-size: 20px; width: 100%; height: 55px; transition: 0.3s; display: flex; justify-content: left; padding-left: 10px; align-items: center;" onclick="modeChang()" id="modeSet"><i class="fa-solid fa-chart-pie" style="margin-right: 5px;"></i> Mode settings</p></div></div>
-    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="security"><iframe src="https://matthewmatexas.github.io/phone/security.html" frameborder="0" style="width: 100%; height: 100%;"></iframe><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program1finish" onclick="program1Close()"></div></div>
-    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="weather"><div style="width: 100%; height: 100%; background-color: purple; z-index: 3; display: flex; justify-content: center; align-items: center; transition: 0.3s;" id="weatherLoader"><span class="loader3"></span><p style="color: white; position: absolute; margin-top: -200px;">Loading Weather...</p></div><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-temperature-half"></i> Weather</h1><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-cloud-sun"></i></div><p style="width: 150px; height: 30px; border-radius: 15px; position: absolute; top: 230px; border: 2px solid purple; display: flex; justify-content: center; align-items: center; font-size: 20px; animation: transform 5s ease-in-out infinite;">Lentvaris</p><p style="position: absolute; top: 300px; font-size: 25px;">Clouds mostly covering sun</p><p style="position: absolute; top: 35px; right: 15px; font-size: 20px;">Feels like 16°C</p><p style="position: absolute; top: 350px; font-size: 25px;">18°C</p><p style="font-size: 20px; position: absolute; left: 15px; top: 420px;">Next 4 hours:</p><div style="width: 95%; position: absolute; top: 450px; height: 100px; border-radius: 15px; border: 5px solid purple; display: flex; justify-content: space-around; align-items: center;"><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">17°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">15°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun-rain"></i><p style="font-size: 20px;">12°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-showers-heavy"></i><p style="font-size: 20px;">8°C</p></div></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 25px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Weather</p><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program2finish" onclick="program2Close()"></div></div>
-    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: flex; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 1; z-index: 2; background-color: white;" id="music"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-music"></i> Music</h1><p style="font-size: 20px; position: absolute; left: 15px; top: 250px;">Music player:</p><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; color: purple; top: 280px; transition: 0.3s;" id="song1"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics1open()"><i class="fa-solid fa-align-right"></i></p><img src="song1.jpg" alt="" id="1photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Leah Kate</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">10 things I hate about you</p><i id="1play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song1play()"></i><i id="1pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song1pause()"></i><i id="1skip" onclick="Oneskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="1back" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg); opacity: 0.3;"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song2"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics2open()"><i class="fa-solid fa-align-right"></i></p><img src="song2.jpg" alt="" id="2photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Olivia Rodrigo</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Driver's License</p><i id="2play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song2play()"></i><i id="2pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song2pause()"></i><i id="2skip" onclick="Twoskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="2back" onclick="Twoback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song3"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics3open()"><i class="fa-solid fa-align-right"></i></p><img src="song3.jpg" alt="" id="3photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Baby Queen</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Narcissist</p><i id="3play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song3play()"></i><i id="3pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song3pause()"></i><i id="3skip" onclick="Threeskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="3back" onclick="Threeback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song4"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics4open()"><i class="fa-solid fa-align-right"></i></p><img src="song4.jpg" alt="" id="4photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Adele</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Easy on me</p><i id="4play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song4play()"></i><i id="4pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song4pause()"></i><i id="4skip" onclick="Fourskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="4back" onclick="Fourback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song5"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics5open()"><i class="fa-solid fa-align-right"></i></p><img src="song5.jpg" alt="" id="5photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Billie Eilish</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Happier than ever</p><i id="5play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song5play()"></i><i id="5pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song5pause()"></i><i class="fa-solid fa-forward" onclick="Fiveskip()" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="5back" onclick="Fiveback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song6"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics6open()"><i class="fa-solid fa-align-right"></i></p><img src="song6.jpg" alt="" id="6photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Bella Poarch</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Build a b****</p><i id="6play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song6play()"></i><i id="6pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song6pause()"></i><i id="6skip" onclick="Sixskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="6back" onclick="Sixback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song7"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics7open()"><i class="fa-solid fa-align-right"></i></p><img src="song7.jpg" alt="" id="7photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">GAYLE</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">abcdefu</p><i id="7play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song7play()"></i><i id="7pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song7pause()"></i><i id="7skip" onclick="Sevenskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px; opacity: 0.3;"></i><i id="7back" onclick="Sevenback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-music"></i></div><div style="width: 95%; height: 5px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program3finish" onclick="program3Close()"></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 25px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Music services</p></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; color: black; font-size: 50px; transition: 0.3s; opacity: 0; z-index: 2;" id="complete"><h1><i class="fa-solid fa-circle-check"></i> Complete!</h1><div style="width: 95%; height: 10px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;" id="setupOk" onclick="setupHome()"></div><p style="color: darkgrey; font-size: 15px; padding: 30px; bottom: 10px; position: fixed; text-align: justify; opacity: 1; transition: 0.3s;">Click the button to return home <i class="fa-solid fa-arrow-down"></i></p></div>
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; flex-direction: column; overflow: hidden; font-size: 30px; transition: 0.3s; opacity: 0; text-align: center;" id="home2"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-house"></i> Home</h1><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program1" onclick="program1Open()"><i class="fa-solid fa-shield"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program2" onclick="program2Open()"><i class="fa-solid fa-temperature-half"></i></div><div style="width: 100px; height: 100px; border-radius: 15px; display: flex; justify-content: center; color: purple; align-items: center; font-size: 50px; transition: 0.3s; border: 2px solid purple;" id="program3" onclick="program3Open()"><i class="fa-solid fa-music"></i></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 100%; height: 120px; display: flex; justify-content: space-around; align-items: center;"><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div><div style="width: 100px; height: 100px; border-radius: 15px; background-color: white; border: 2px solid purple;"></div></div><div style="width: 95%; height: 10px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s;"></div><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; z-index: 3;" id="menu" onclick="menuOpen()"></i><i class="fa-solid fa-ellipsis-vertical" style="position: absolute; top: 15px; right: 15px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 100%; color: purple; transition: 0.3s; display: none; z-index: 3;" id="menu2" onclick="menuClose()"></i><div style="width: 0; height: 0; overflow: hidden; position: absolute; top: 80px; background-color: white; opacity: 0; transition: 0.3s; right: 20px; border-radius: 15px; border: none; box-shadow: 0 0 15px purple; display: flex; justify-content: center; align-items: center; flex-direction: column; color: purple;" id="menuWindow"><p style="font-size: 20px; width: 100%; height: 55px; transition: 0.3s; display: flex; justify-content: left; padding-left: 10px; align-items: center;" onclick="modeChang()" id="modeSet"><i class="fa-solid fa-chart-pie" style="margin-right: 5px;"></i> Mode settings</p></div></div>
+    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="security"><iframe src="https://matthewmatexas.github.io/phone/security.html" frameborder="0" style="width: 100%; height: 100%;"></iframe><div style="width: 95%; height: 10px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program1finish" onclick="program1Close()"></div></div>
+    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="weather"><div style="width: 100%; height: 100%; background-color: purple; z-index: 3; display: flex; justify-content: center; align-items: center; transition: 0.3s;" id="weatherLoader"><span class="loader3"></span><p style="color: white; position: absolute; margin-top: -200px;">Loading Weather...</p></div><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-temperature-half"></i> Weather</h1><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-cloud-sun"></i></div><p style="width: 150px; height: 30px; border-radius: 15px; position: absolute; top: 230px; border: 2px solid purple; display: flex; justify-content: center; align-items: center; font-size: 20px; animation: transform 5s ease-in-out infinite;">Lentvaris</p><p style="position: absolute; top: 300px; font-size: 25px;">Clouds mostly covering sun</p><p style="position: absolute; top: 35px; right: 15px; font-size: 20px;">Feels like 16°C</p><p style="position: absolute; top: 350px; font-size: 25px;">18°C</p><p style="font-size: 20px; position: absolute; left: 15px; top: 420px;">Next 4 hours:</p><div style="width: 95%; position: absolute; top: 450px; height: 100px; border-radius: 15px; border: 5px solid purple; display: flex; justify-content: space-around; align-items: center;"><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">17°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun"></i><p style="font-size: 20px;">15°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-sun-rain"></i><p style="font-size: 20px;">12°C</p></div><div style="width: 23%; height: 80px; border-radius: 15px; border: 2px solid darkgrey; display: flex; justify-content: space-around; align-items: center; color: darkgrey; flex-direction: column;"><i class="fa-solid fa-cloud-showers-heavy"></i><p style="font-size: 20px;">8°C</p></div></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 30px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Weather</p><div style="width: 95%; height: 10px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program2finish" onclick="program2Close()"></div></div>
+    <div style="width: 100%; height: 200px; position: fixed; top: 0; right: 0; left: 0; bottom: 0; display: none; justify-content: center; align-items: center; border-radius: 0 0 15px 15px; color: black; font-size: 30px; overflow: hidden; flex-direction: column; transition: 0.3s; opacity: 0; z-index: 2; background-color: white;" id="music"><h1 style="position: fixed; top: 30px; left: 30px;"><i class="fa-solid fa-music"></i> Music</h1><p style="font-size: 20px; position: absolute; left: 15px; top: 250px;">Music player:</p><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; color: purple; top: 280px; transition: 0.3s;" id="song1"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics1open()"><i class="fa-solid fa-align-right"></i></p><img src="song1.jpg" alt="" id="1photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Leah Kate</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">10 things I hate about you</p><i id="1play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song1play()"></i><i id="1pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song1pause()"></i><i id="1skip" onclick="Oneskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="1back" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg); opacity: 0.3;"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song2"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics2open()"><i class="fa-solid fa-align-right"></i></p><img src="song2.jpg" alt="" id="2photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Olivia Rodrigo</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Driver's License</p><i id="2play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song2play()"></i><i id="2pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song2pause()"></i><i id="2skip" onclick="Twoskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="2back" onclick="Twoback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song3"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics3open()"><i class="fa-solid fa-align-right"></i></p><img src="song3.jpg" alt="" id="3photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Baby Queen</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Narcissist</p><i id="3play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song3play()"></i><i id="3pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song3pause()"></i><i id="3skip" onclick="Threeskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="3back" onclick="Threeback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song4"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics4open()"><i class="fa-solid fa-align-right"></i></p><img src="song4.jpg" alt="" id="4photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Adele</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Easy on me</p><i id="4play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song4play()"></i><i id="4pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song4pause()"></i><i id="4skip" onclick="Fourskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="4back" onclick="Fourback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song5"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics5open()"><i class="fa-solid fa-align-right"></i></p><img src="song5.jpg" alt="" id="5photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Billie Eilish</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Happier than ever</p><i id="5play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song5play()"></i><i id="5pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song5pause()"></i><i class="fa-solid fa-forward" onclick="Fiveskip()" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="5back" onclick="Fiveback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song6"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics6open()"><i class="fa-solid fa-align-right"></i></p><img src="song6.jpg" alt="" id="6photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Bella Poarch</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Build a b****</p><i id="6play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song6play()"></i><i id="6pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song6pause()"></i><i id="6skip" onclick="Sixskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="6back" onclick="Sixback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song7"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics7open()"><i class="fa-solid fa-align-right"></i></p><img src="song7.jpg" alt="" id="7photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">GAYLE</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">abcdefu</p><i id="7play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song7play()"></i><i id="7pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song7pause()"></i><i id="7skip" onclick="Sevenskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="7back" onclick="Sevenback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div>
+    <div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song8"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics8open()"><i class="fa-solid fa-align-right"></i></p><img src="song8.jpg" alt="" id="8photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Tom Odell</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Another Love</p><i id="8play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song8play()"></i><i id="8pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song8pause()"></i><i id="8skip" onclick="Eightskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="8back" onclick="Eightback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song9"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics9open()"><i class="fa-solid fa-align-right"></i></p><img src="song9.jpg" alt="" id="9photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">MARINA</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Bubblegum b****</p><i id="9play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song9play()"></i><i id="9pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song9pause()"></i><i id="9skip" onclick="Nineskip()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px;"></i><i id="9back" onclick="Nineback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 95%; height: 200px; border: 5px solid purple; border-radius: 15px; display: flex; justify-content: center; align-items: center; position: absolute; margin-right: -200%; transition: 0.3s; color: purple; top: 280px;" id="song10"><p style="position: absolute; top: 10px; right: 10px; font-size: 15px;" onclick="lyrics10open()"><i class="fa-solid fa-align-right"></i></p><img src="song10.jpg" alt="" id="10photo" style="border-radius: 100%; width: 100px; border: 5px solid purple; height: 100px; position: absolute; left: 15px; top: 15px;"><p style="font-size: 20px; position: absolute; left: 130px; top: 40px;">Lemaitre</p><p style="font-size: 15px; position: absolute; left: 130px; top: 80px;">Closer</p><i id="10play" class="fa-solid fa-play" style="position: absolute; bottom: 20px;" onclick="song10play()"></i><i id="10pause" class="fa-solid fa-pause" style="position: absolute; bottom: 20px; display: none;" onclick="song10pause()"></i><i class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: 150px; opacity: 0.3;"></i><i id="10back" onclick="Tenback()" class="fa-solid fa-forward" style="position: absolute; bottom: 20px; margin-left: -150px; transform: rotate(180deg);"></i></div><div style="width: 100px; position: absolute; top: 100px; height: 100px; border-radius: 100%; border: 5px solid purple; display: flex; justify-content: center; align-items: center; color: purple; font-size: 50px;"><i class="fa-solid fa-music"></i></div><div style="width: 95%; height: 10px; border-radius: 15px; background-color: purple; position: fixed; bottom: 5px; transition: 0.3s; z-index: 3;" id="program3finish" onclick="program3Close()"></div><p style="font-size: 15px; color: darkgrey; position: absolute; bottom: 30px; right: 25px;">Powered by TONA <i class="fa-brands fa-superpowers"></i> Music services</p></div>
     <div style="width: 95%; padding: 5px; font-size: 10px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics1"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics1close()"><i class="fa-solid fa-xmark"></i></p><pre>
 I caught you cheating
 
@@ -815,6 +819,212 @@ And your broke-down car and the things you call art
 Forget you and your friends that I'll never see again
 
 Everybody but your dog, you can all get lost</pre></div>
+<div style="width: 95%; padding: 5px; font-size: 10px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics8"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics8close()"><i class="fa-solid fa-xmark"></i></p><pre>
+I wanna take you somewhere so you know I care
+
+But it's so cold and I don't know where
+
+I brought you daffodils on a pretty string
+
+But they won't flower like they did last spring
+
+And I wanna kiss you, make you feel alright
+
+I'm just so tired to share my nights
+
+I wanna cry and I wanna love
+
+But all my tears have been used up
+
+On another love, another love
+
+All my tears have been used up
+
+On another love, another love
+
+All my tears have been used up
+
+On another love, another love
+
+All my tears have been used up, up
+
+And if somebody hurts you, I wanna fight
+
+But my hands been broken one too many times
+
+So I'll use my voice, I'll be so ... rude
+
+Words they always win, but I know I'll lose
+
+And I'd sing a song, that'd be just ours
+
+But I sang 'em all to another heart
+
+And I wanna cry, I wanna learn to love
+
+But all my tears have been used up
+
+On another love, another love
+
+All my tears have been used up
+
+On another love, another love
+
+All my tears have been used up
+
+On another love, another love
+
+All my tears have been used up, up
+
+Oh, need a love, now
+
+My heart is thinking of
+
+I wanna sing a song, that'd be just ours
+
+But I sang 'em all to another heart
+
+And I wanna cry, I wanna fall in love
+
+But all my tears have been used up
+
+On another love, another love
+
+All my tears have been used up
+
+On another love, another love
+
+All my tears have been used up
+
+On another love, another love
+
+All my tears have been used up, up</pre></div>
+<div style="width: 95%; padding: 5px; font-size: 10px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics9"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics9close()"><i class="fa-solid fa-xmark"></i></p><pre>
+Got a figure like a pin-up, got a figure like a doll
+
+Don't care if you think I'm dumb, I don't care at all
+
+Candy bear, sweetie pie, wanna be adored
+
+I'm the girl you'd die for
+
+I'll chew you up and I'll spit you out
+
+'Cause that's what young love is all about
+
+So pull me closer and kiss me hard
+
+I'm gonna pop your bubblegum heart
+
+I'm Miss Sugar Pink, liquor, liquor lips
+
+Hit me with your sweet love, steal me with a kiss
+
+I'm Miss Sugar Pink, liquor, liquor lips
+
+I'm gonna be your bubblegum ...
+
+I'm gonna be your bubblegum ...
+
+Queentex, latex, I'm your wonder maid
+
+Life gave me some lemons so I made some lemonade
+
+Soda pop, soda pop, baby, here I come
+
+Straight to number one
+
+Oh, dear diary, I met a boy
+
+He made my doll heart light up with joy
+
+Oh, dear diary, we fell apart
+
+Welcome to the life of Electra Heart
+
+I'm Miss Sugar Pink, liquor, liquor lips
+
+Hit me with your sweet love, steal me with a kiss
+
+I'm Miss Sugar Pink, liquor, liquor lips
+
+I'm gonna be your bubblegum ...
+
+I'm gonna be your bubblegum ...
+
+I think I want your, your American tan
+
+Oh, oh, oh
+
+I think you're gonna be my biggest fan
+
+Oh, oh, oh
+
+I'm Miss Sugar Pink, liquor, liquor lips
+
+Hit me with your sweet love, steal me with a kiss
+
+I'm Miss Sugar Pink, liquor, liquor lips
+
+I'm gonna be your bubblegum ...
+
+I'm gonna be your bubblegum ...
+
+I'm Miss Sugar Pink, liquor, liquor lips
+
+Hit me with your sweet love, steal me with a kiss
+
+I'm Miss Sugar Pink, liquor, liquor lips
+
+I'm gonna be your bubblegum ...
+
+I'm gonna be your bubblegum ...</pre></div>
+<div style="width: 95%; padding: 5px; font-size: 10px; transition: 0.3s; text-align: center; box-shadow: 0 0 30px purple; border-radius: 15px; border: 5px solid purple; height: 40%; position: fixed; bottom: -60%; left: 2.5%; right: 2.5%; background-color: white; z-index: 3; overflow: scroll; overflow-x: hidden;" id="lyrics10"><p style="position: absolute; top: 5px; right: 10px; font-size: 20px; color: purple;" onclick="lyrics10close()"><i class="fa-solid fa-xmark"></i></p><pre>
+I feel the shadows hanging over
+
+They're waiting to come closer
+
+To come and take me away
+
+And I can feel my heart skip
+
+Everytime that I slip
+
+I wanna run away
+
+I, I've been working the morning
+
+Don't get off 'til the night
+
+I can't find the time to clear my mind
+
+Oh, I dream of the lazy days
+
+One of the careless ways for me to be living
+
+I feel the shadows hanging over
+
+They're waiting to come closer
+
+To come and take me away
+
+And I can feel my heart skip
+
+Everytime that I slip
+
+I wanna run away
+
+I feel the shadows hanging over
+
+They're waiting to come closer
+
+To come and take me away
+
+And I can feel my heart skip
+
+Everytime that I slip
+
+I wanna run away</pre></div>
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script>
         function power() {
@@ -1977,7 +2187,7 @@ Everybody but your dog, you can all get lost</pre></div>
             document.getElementById("5play").style.display = "none";
             document.getElementById("song5audio").play();
             document.getElementById("5photo").style.animation = "rotation 6s linear infinite";
-            document.getElementById("lyrics5").style.bottom = "-60%";
+            document.getElementById("lyrics6").style.bottom = "-60%";
         }
         function Sixskip() {
             document.getElementById("6photo").style.animation = "none";
@@ -2006,7 +2216,7 @@ Everybody but your dog, you can all get lost</pre></div>
             document.getElementById("7play").style.display = "none";
             document.getElementById("song7audio").play();
             document.getElementById("7photo").style.animation = "rotation 6s linear infinite";
-            document.getElementById("lyrics7").style.bottom = "-60%";
+            document.getElementById("lyrics6").style.bottom = "-60%";
         };
         function song7play() {
             document.getElementById("7photo").style.animation = "rotation 6s linear infinite";
@@ -2032,7 +2242,21 @@ Everybody but your dog, you can all get lost</pre></div>
             document.getElementById("6play").style.display = "none";
             document.getElementById("song6audio").play();
             document.getElementById("6photo").style.animation = "rotation 6s linear infinite";
-            document.getElementById("lyrics6").style.bottom = "-60%";
+            document.getElementById("lyrics7").style.bottom = "-60%";
+        }
+        function Sevenskip() {
+            document.getElementById("7photo").style.animation = "none";
+            document.getElementById("7pause").style.display = "none";
+            document.getElementById("7play").style.display = "block";
+            document.getElementById("song7audio").pause();
+            document.getElementById('song7audio').currentTime = 0;
+            document.getElementById("song7").style.marginLeft = "-200%";
+            document.getElementById("song8").style.marginRight = "0%";
+            document.getElementById("8pause").style.display = "block";
+            document.getElementById("8play").style.display = "none";
+            document.getElementById("song8audio").play();
+            document.getElementById("8photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics7").style.bottom = "-60%";
         }
         var music7 = document.getElementById("song7audio");
         music7.onended = function() {
@@ -2041,12 +2265,169 @@ Everybody but your dog, you can all get lost</pre></div>
             document.getElementById("7play").style.display = "block";
             document.getElementById("song7audio").pause();
             document.getElementById('song7audio').currentTime = 0;
+            document.getElementById("song7").style.marginLeft = "-200%";
+            document.getElementById("song8").style.marginRight = "0%";
+            document.getElementById("8pause").style.display = "block";
+            document.getElementById("8play").style.display = "none";
+            document.getElementById("song8audio").play();
+            document.getElementById("8photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics7").style.bottom = "-60%";
+        };
+        function song8play() {
+            document.getElementById("8photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("8pause").style.display = "block";
+            document.getElementById("8play").style.display = "none";
+            document.getElementById("song8audio").play();
+        }
+        function song8pause() {
+            document.getElementById("8photo").style.animation = "none";
+            document.getElementById("8pause").style.display = "none";
+            document.getElementById("8play").style.display = "block";
+            document.getElementById("song8audio").pause();
+        }
+        function Eightback() {
+            document.getElementById("8photo").style.animation = "none";
+            document.getElementById("8pause").style.display = "none";
+            document.getElementById("8play").style.display = "block";
+            document.getElementById("song8audio").pause();
+            document.getElementById('song8audio').currentTime = 0;
+            document.getElementById("song8").style.marginRight = "-200%";
+            document.getElementById("song7").style.marginLeft = "0";
+            document.getElementById("7pause").style.display = "block";
+            document.getElementById("7play").style.display = "none";
+            document.getElementById("song7audio").play();
+            document.getElementById("7photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics8").style.bottom = "-60%";
+        }
+        function Eightskip() {
+            document.getElementById("8photo").style.animation = "none";
+            document.getElementById("8pause").style.display = "none";
+            document.getElementById("8play").style.display = "block";
+            document.getElementById("song8audio").pause();
+            document.getElementById('song8audio').currentTime = 0;
+            document.getElementById("song8").style.marginLeft = "-200%";
+            document.getElementById("song9").style.marginRight = "0%";
+            document.getElementById("9pause").style.display = "block";
+            document.getElementById("9play").style.display = "none";
+            document.getElementById("song9audio").play();
+            document.getElementById("9photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics8").style.bottom = "-60%";
+        }
+        var music8 = document.getElementById("song8audio");
+        music8.onended = function() {
+            document.getElementById("8photo").style.animation = "none";
+            document.getElementById("8pause").style.display = "none";
+            document.getElementById("8play").style.display = "block";
+            document.getElementById("song8audio").pause();
+            document.getElementById('song8audio').currentTime = 0;
+            document.getElementById("song8").style.marginLeft = "-200%";
+            document.getElementById("song9").style.marginRight = "0%";
+            document.getElementById("9pause").style.display = "block";
+            document.getElementById("9play").style.display = "none";
+            document.getElementById("song9audio").play();
+            document.getElementById("9photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics8").style.bottom = "-60%";
+        };
+        function song9play() {
+            document.getElementById("9photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("9pause").style.display = "block";
+            document.getElementById("9play").style.display = "none";
+            document.getElementById("song9audio").play();
+        }
+        function song9pause() {
+            document.getElementById("9photo").style.animation = "none";
+            document.getElementById("9pause").style.display = "none";
+            document.getElementById("9play").style.display = "block";
+            document.getElementById("song9audio").pause();
+        }
+        function Nineback() {
+            document.getElementById("9photo").style.animation = "none";
+            document.getElementById("9pause").style.display = "none";
+            document.getElementById("9play").style.display = "block";
+            document.getElementById("song9audio").pause();
+            document.getElementById('song9audio').currentTime = 0;
+            document.getElementById("song9").style.marginRight = "-200%";
+            document.getElementById("song8").style.marginLeft = "0";
+            document.getElementById("8pause").style.display = "block";
+            document.getElementById("8play").style.display = "none";
+            document.getElementById("song8audio").play();
+            document.getElementById("8photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics9").style.bottom = "-60%";
+        }
+        function Nineskip() {
+            document.getElementById("9photo").style.animation = "none";
+            document.getElementById("9pause").style.display = "none";
+            document.getElementById("9play").style.display = "block";
+            document.getElementById("song9audio").pause();
+            document.getElementById('song9audio').currentTime = 0;
+            document.getElementById("song9").style.marginLeft = "-200%";
+            document.getElementById("song10").style.marginRight = "0%";
+            document.getElementById("10pause").style.display = "block";
+            document.getElementById("10play").style.display = "none";
+            document.getElementById("song10audio").play();
+            document.getElementById("10photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics9").style.bottom = "-60%";
+        }
+        var music9 = document.getElementById("song9audio");
+        music9.onended = function() {
+            document.getElementById("9photo").style.animation = "none";
+            document.getElementById("9pause").style.display = "none";
+            document.getElementById("9play").style.display = "block";
+            document.getElementById("song9audio").pause();
+            document.getElementById('song9audio').currentTime = 0;
+            document.getElementById("song9").style.marginLeft = "-200%";
+            document.getElementById("song10").style.marginRight = "0%";
+            document.getElementById("10pause").style.display = "block";
+            document.getElementById("10play").style.display = "none";
+            document.getElementById("song10audio").play();
+            document.getElementById("10photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics9").style.bottom = "-60%";
+        };
+        function song10play() {
+            document.getElementById("10photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("10pause").style.display = "block";
+            document.getElementById("10play").style.display = "none";
+            document.getElementById("song10audio").play();
+        }
+        function song10pause() {
+            document.getElementById("10photo").style.animation = "none";
+            document.getElementById("10pause").style.display = "none";
+            document.getElementById("10play").style.display = "block";
+            document.getElementById("song10audio").pause();
+        }
+        function Tenback() {
+            document.getElementById("10photo").style.animation = "none";
+            document.getElementById("10pause").style.display = "none";
+            document.getElementById("10play").style.display = "block";
+            document.getElementById("song10audio").pause();
+            document.getElementById('song10audio').currentTime = 0;
+            document.getElementById("song10").style.marginRight = "-200%";
+            document.getElementById("song9").style.marginLeft = "0";
+            document.getElementById("9pause").style.display = "block";
+            document.getElementById("9play").style.display = "none";
+            document.getElementById("song9audio").play();
+            document.getElementById("9photo").style.animation = "rotation 6s linear infinite";
+            document.getElementById("lyrics10").style.bottom = "-60%";
+        }
+        var music10 = document.getElementById("song10audio");
+        music10.onended = function() {
+            document.getElementById("10photo").style.animation = "none";
+            document.getElementById("10pause").style.display = "none";
+            document.getElementById("10play").style.display = "block";
+            document.getElementById("song10audio").pause();
+            document.getElementById('song10audio').currentTime = 0;
+            document.getElementById("song10").style.marginRight = "-200%";
+            document.getElementById("song9").style.marginRight = "-200%";
+            document.getElementById("song8").style.marginRight = "-200%";
             document.getElementById("song7").style.marginRight = "-200%";
             document.getElementById("song6").style.marginRight = "-200%";
             document.getElementById("song5").style.marginRight = "-200%";
             document.getElementById("song4").style.marginRight = "-200%";
             document.getElementById("song3").style.marginRight = "-200%";
             document.getElementById("song2").style.marginRight = "-200%";
+            document.getElementById("song10").style.marginLeft = "0";
+            document.getElementById("song9").style.marginLeft = "0";
+            document.getElementById("song8").style.marginLeft = "0";
             document.getElementById("song7").style.marginLeft = "0";
             document.getElementById("song6").style.marginLeft = "0";
             document.getElementById("song5").style.marginLeft = "0";
@@ -2054,7 +2435,7 @@ Everybody but your dog, you can all get lost</pre></div>
             document.getElementById("song3").style.marginLeft = "0";
             document.getElementById("song2").style.marginLeft = "0";
             document.getElementById("song1").style.marginLeft = "0%";
-            document.getElementById("lyrics7").style.bottom = "-60%";
+            document.getElementById("lyrics10").style.bottom = "-60%";
         };
         function lyrics1open() {
             document.getElementById("lyrics1").style.bottom = "25px";
@@ -2097,6 +2478,24 @@ Everybody but your dog, you can all get lost</pre></div>
         }
         function lyrics7close() {
             document.getElementById("lyrics7").style.bottom = "-60%";
+        }
+        function lyrics8open() {
+            document.getElementById("lyrics8").style.bottom = "25px";
+        }
+        function lyrics8close() {
+            document.getElementById("lyrics8").style.bottom = "-60%";
+        }
+        function lyrics9open() {
+            document.getElementById("lyrics9").style.bottom = "25px";
+        }
+        function lyrics9close() {
+            document.getElementById("lyrics9").style.bottom = "-60%";
+        }
+        function lyrics10open() {
+            document.getElementById("lyrics10").style.bottom = "25px";
+        }
+        function lyrics10close() {
+            document.getElementById("lyrics10").style.bottom = "-60%";
         }
     </script>
 </body>
